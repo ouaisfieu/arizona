@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Critique du dossier Arizona : lire la lecture — Ouaisfieu</title>
+<meta name="description" content="Lecture critique et réflexive des dossiers « Coalition Arizona » et « Budget Arizona » : ce qui tient méthodologiquement, ce qu'on ne peut pas vérifier depuis l'extérieur, et ce que la mise en forme décide pour le lecteur sans le dire.">
+<link rel="canonical" href="https://ouaisfieu.github.io/arizona/budget/critique">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Ouaisfieu">
+<meta property="og:title" content="Critique du dossier Arizona : lire la lecture">
+<meta property="og:description" content="Une relecture méthodologique des dossiers Arizona et Budget Arizona — forces, angles morts et ce que la forme fait à la lecture.">
+<meta property="og:url" content="https://ouaisfieu.github.io/arizona/budget/critique">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#10141b">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600;6..72,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #10141b;
+    --bg-alt: #0b0e13;
+    --panel: #1a212c;
+    --panel-2: #161c26;
+    --rule: rgba(231,228,221,0.11);
+    --text: #e9e6df;
+    --text-dim: #9aa3af;
+    --text-faint: #6b7482;
+    --copper: #c17f45;
+    --copper-soft: rgba(193,127,69,0.13);
+    --copper-line: rgba(193,127,69,0.35);
+    --serif: 'Newsreader', Georgia, serif;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --mono: 'JetBrains Mono', ui-monospace, monospace;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:var(--sans);
+    font-size:16.5px;
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--copper);text-decoration-color:var(--copper-line);text-underline-offset:3px;}
+  a:hover{text-decoration-color:var(--copper);}
+  .wrap{max-width:760px;margin:0 auto;padding:0 24px;}
+  .wrap-wide{max-width:920px;margin:0 auto;padding:0 24px;}
+
+  /* breadcrumb / header */
+  header.top{
+    border-bottom:1px solid var(--rule);
+    background:linear-gradient(180deg, var(--bg-alt), var(--bg));
+    padding:16px 0;
+    position:sticky;top:0;z-index:20;
+    backdrop-filter:blur(6px);
+  }
+  .crumb{
+    font-family:var(--mono);
+    font-size:12.5px;
+    letter-spacing:.03em;
+    color:var(--text-dim);
+    display:flex;align-items:center;gap:8px;flex-wrap:wrap;
+  }
+  .crumb a{color:var(--text-dim);}
+  .crumb a:hover{color:var(--copper);}
+  .crumb .sep{color:var(--text-faint);}
+  .crumb .here{color:var(--copper);}
+
+  /* hero */
+  .hero{padding:64px 0 40px;border-bottom:1px solid var(--rule);}
+  .eyebrow{
+    font-family:var(--mono);text-transform:uppercase;letter-spacing:.14em;
+    font-size:12px;color:var(--copper);margin-bottom:18px;display:flex;align-items:center;gap:10px;
+  }
+  .eyebrow::before{content:"";width:22px;height:1px;background:var(--copper-line);}
+  h1{
+    font-family:var(--serif);font-weight:600;
+    font-size:clamp(2.1rem, 5.2vw, 3.3rem);
+    line-height:1.12;letter-spacing:-.01em;margin:0 0 22px;
+  }
+  h1 em{font-style:italic;color:var(--copper);}
+  .dek{
+    font-family:var(--serif);font-weight:400;font-style:italic;
+    font-size:clamp(1.08rem, 2vw, 1.32rem);color:var(--text-dim);
+    line-height:1.55;max-width:640px;margin:0 0 26px;
+  }
+  .meta-line{
+    display:flex;flex-wrap:wrap;gap:6px 18px;
+    font-family:var(--mono);font-size:12.5px;color:var(--text-faint);
+  }
+  .meta-line b{color:var(--text-dim);font-weight:500;}
+
+  /* toc */
+  nav.toc{padding:30px 0;border-bottom:1px solid var(--rule);}
+  nav.toc ol{
+    list-style:none;margin:0;padding:0;
+    display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:6px 22px;
+  }
+  nav.toc a{
+    display:flex;gap:10px;align-items:baseline;color:var(--text-dim);font-size:14px;
+    padding:5px 0;border-bottom:1px dotted transparent;
+  }
+  nav.toc a:hover{color:var(--copper);}
+  nav.toc .num{font-family:var(--mono);color:var(--copper);font-size:12px;width:22px;flex:none;}
+
+  /* jauge legend */
+  .legend{
+    margin:34px 0 0;padding:20px 22px;
+    background:var(--panel-2);border:1px solid var(--rule);border-radius:6px;
+  }
+  .legend h3{
+    font-family:var(--mono);font-size:11.5px;text-transform:uppercase;letter-spacing:.1em;
+    color:var(--copper);margin:0 0 14px;
+  }
+  .legend-rows{display:grid;gap:10px;}
+  .legend-row{display:flex;align-items:center;gap:12px;font-size:13.5px;color:var(--text-dim);}
+  .legend-row b{color:var(--text);font-weight:500;}
+
+  /* jauge component */
+  .jauge{display:inline-flex;gap:3px;vertical-align:middle;flex:none;}
+  .jauge .seg{width:9px;height:9px;border-radius:2px;background:rgba(255,255,255,.09);}
+  .jauge[data-level="1"] .seg:nth-child(-n+1){background:var(--copper);}
+  .jauge[data-level="2"] .seg:nth-child(-n+2){background:var(--copper);}
+  .jauge[data-level="3"] .seg:nth-child(-n+3){background:var(--copper);}
+  .jauge[data-level="4"] .seg:nth-child(-n+4){background:var(--copper);}
+
+  /* sections */
+  main{padding:8px 0 40px;}
+  section{padding:56px 0;border-bottom:1px solid var(--rule);}
+  section:last-of-type{border-bottom:none;}
+  .kicker{
+    font-family:var(--mono);font-size:12.5px;color:var(--copper);
+    letter-spacing:.08em;text-transform:uppercase;margin:0 0 10px;
+  }
+  h2{
+    font-family:var(--serif);font-weight:600;font-size:clamp(1.5rem,3vw,2.05rem);
+    line-height:1.2;margin:0 0 26px;letter-spacing:-.005em;
+  }
+  h3{
+    font-family:var(--serif);font-weight:600;font-size:1.22rem;margin:32px 0 12px;
+  }
+  p{margin:0 0 18px;color:#dbd8d1;}
+  p.lead{font-size:1.08rem;color:var(--text);}
+  ul,ol.plain{margin:0 0 20px;padding-left:22px;}
+  ul li, ol.plain li{margin-bottom:10px;color:#dbd8d1;}
+  strong{color:var(--text);font-weight:600;}
+
+  /* callout boxes */
+  .box{
+    border-left:2px solid var(--copper-line);
+    background:var(--copper-soft);
+    padding:16px 20px;margin:24px 0;border-radius:0 6px 6px 0;
+  }
+  .box .label{
+    font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.09em;
+    color:var(--copper);margin-bottom:8px;display:block;
+  }
+  .box p{margin:0 0 10px;color:#e4ded4;font-size:15px;}
+  .box p:last-child{margin-bottom:0;}
+
+  .box.dim{
+    border-left-color:rgba(255,255,255,.18);
+    background:var(--panel-2);
+  }
+  .box.dim .label{color:var(--text-dim);}
+
+  /* example cards */
+  .example{
+    display:grid;grid-template-columns:1fr;gap:10px;
+    padding:18px 20px;margin:16px 0;
+    background:var(--panel);border:1px solid var(--rule);border-radius:6px;
+  }
+  .example .claim{font-size:14.5px;color:var(--text-dim);}
+  .example .claim b{color:var(--text);font-weight:500;}
+  .example .rating{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:11.5px;color:var(--text-faint);}
+  .example .gloss{font-size:14.5px;color:#dbd8d1;border-top:1px solid var(--rule);padding-top:10px;margin-top:2px;}
+
+  /* tables */
+  table{width:100%;border-collapse:collapse;margin:20px 0 26px;font-size:14px;}
+  caption{text-align:left;font-family:var(--mono);font-size:11.5px;color:var(--text-faint);margin-bottom:8px;text-transform:uppercase;letter-spacing:.06em;}
+  th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--rule);vertical-align:top;}
+  th{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--text-dim);font-weight:500;}
+  td{color:#dbd8d1;}
+  tr:last-child td{border-bottom:none;}
+
+  /* faq */
+  .faq-item{margin-bottom:22px;}
+  .faq-item .q{font-family:var(--serif);font-style:italic;font-size:1.08rem;color:var(--text);margin-bottom:6px;}
+  .faq-item .a{color:#dbd8d1;font-size:15px;}
+
+  blockquote{
+    margin:24px 0;padding:2px 0 2px 20px;border-left:2px solid var(--copper-line);
+    font-family:var(--serif);font-style:italic;font-size:1.15rem;color:var(--text);line-height:1.5;
+  }
+  blockquote cite{display:block;font-family:var(--mono);font-style:normal;font-size:11.5px;color:var(--text-faint);margin-top:8px;text-transform:none;}
+
+  footer{padding:44px 0 60px;}
+  footer .wrap{border-top:1px solid var(--rule);padding-top:28px;}
+  .foot-nav{display:flex;flex-wrap:wrap;gap:20px 28px;margin-bottom:22px;font-size:14px;}
+  .fine{font-family:var(--mono);font-size:11.5px;color:var(--text-faint);line-height:1.7;}
+  .fine a{color:var(--text-faint);}
+
+  ::selection{background:var(--copper);color:#10141b;}
+
+  @media (max-width:600px){
+    section{padding:40px 0;}
+    .hero{padding:44px 0 32px;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+  }
+</style>
+</head>
+<body id="haut">
+
+<header class="top">
+  <div class="wrap-wide crumb">
+    <a href="https://ouaisfieu.github.io/arizona/">OUAISFIEU</a>
+    <span class="sep">/</span>
+    <a href="https://ouaisfieu.github.io/arizona/">arizona</a>
+    <span class="sep">/</span>
+    <a href="https://ouaisfieu.github.io/arizona/budget/">budget</a>
+    <span class="sep">/</span>
+    <span class="here">critique</span>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Dossier Ouaisfieu · Lecture critique</div>
+    <h1>Lire le dossier Arizona&nbsp;: <em>une critique de la critique</em></h1>
+    <p class="dek">Les deux dossiers précédents racontent une coalition. Celui-ci relit les deux dossiers&nbsp;: ce qui, dans leur méthode, tient vraiment&nbsp;; ce qu'un lecteur ne peut pas vérifier depuis l'extérieur&nbsp;; et ce que la mise en forme décide pour lui, sans toujours le dire.</p>
+    <div class="meta-line">
+      <span><b>≈ 12 min</b> de lecture</span>
+      <span>Porte sur&nbsp;: <a href="https://ouaisfieu.github.io/arizona/">Coalition Arizona</a> et <a href="https://ouaisfieu.github.io/arizona/budget/">Le Budget Arizona</a></span>
+      <span>Publié le <b>25 juillet 2026</b></span>
+    </div>
+  </div>
+</div>
+
+<nav class="toc">
+  <div class="wrap">
+    <ol>
+      <li><a href="#cadrage"><span class="num">00</span> Cadrage</a></li>
+      <li><a href="#tient"><span class="num">01</span> Ce qui tient</a></li>
+      <li><a href="#verifiable"><span class="num">02</span> Ce qu'on ne vérifie pas</a></li>
+      <li><a href="#rhetorique"><span class="num">03</span> La rhétorique du neutre</a></li>
+      <li><a href="#chiffres"><span class="num">04</span> Les chiffres</a></li>
+      <li><a href="#manque"><span class="num">05</span> Qui manque à l'appel</a></li>
+      <li><a href="#paradoxe"><span class="num">06</span> Citoyen et contre-analyse</a></li>
+      <li><a href="#progres"><span class="num">07</span> Ce qui ferait progresser</a></li>
+      <li><a href="#faq"><span class="num">08</span> En bref</a></li>
+    </ol>
+
+    <div class="legend">
+      <h3>Une jauge, empruntée à leur propre méthode</h3>
+      <p style="font-size:13.5px;color:var(--text-dim);margin:0 0 16px;">Les deux dossiers distinguent déjà, dans leurs encadrés, le fait établi de la perception rapportée. Cette page reprend cette distinction et l'applique, exemple par exemple, à leur propre texte — une jauge à quatre niveaux, du plus vérifiable au plus spéculatif.</p>
+      <div class="legend-rows">
+        <div class="legend-row"><div class="jauge" data-level="1"><span class="seg"></span><span class="seg"></span><span class="seg"></span><span class="seg"></span></div> <b>Niveau 1</b> — chiffre ou fait institutionnel daté (BNB, Cour des comptes, Comité de monitoring, Commission européenne)</div>
+        <div class="legend-row"><div class="jauge" data-level="2"><span class="seg"></span><span class="seg"></span><span class="seg"></span><span class="seg"></span></div> <b>Niveau 2</b> — fait de presse nommé et corroboré par plusieurs titres</div>
+        <div class="legend-row"><div class="jauge" data-level="3"><span class="seg"></span><span class="seg"></span><span class="seg"></span><span class="seg"></span></div> <b>Niveau 3</b> — récit de coulisse, perception, source anonyme ou éditorialiste</div>
+        <div class="legend-row"><div class="jauge" data-level="4"><span class="seg"></span><span class="seg"></span><span class="seg"></span><span class="seg"></span></div> <b>Niveau 4</b> — extrapolation ou spéculation assumée de l'analyste, au-delà des données disponibles</div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+<section id="cadrage">
+  <div class="wrap">
+    <div class="kicker">00 — Cadrage</div>
+    <h2>À quoi sert cette page</h2>
+    <p class="lead">Elle ne cherche pas à trancher si les politiques de l'Arizona sont bonnes ou mauvaises — question légitime, mais qui appartient au débat politique, pas à un exercice de relecture méthodologique. Elle pose une question plus étroite et, en un sens, plus utile&nbsp;: <strong>l'analyse elle-même tient-elle, sur ses propres termes</strong>&nbsp;? Que peut-on lui faire confiance à vue, que doit-on suspendre faute de pouvoir vérifier, et que sa forme décide-t-elle pour le lecteur sans le lui dire explicitement&nbsp;?</p>
+    <p>Une précision de départ, par honnêteté plus que par coquetterie&nbsp;: cette page est rédigée par un assistant IA (Claude), à la demande de l'auteur du site, à partir d'une lecture des deux dossiers publiés. Les documents sources qui nourrissent ces dossiers portent eux-mêmes, par endroits, la marque d'une synthèse assistée par IA — notation en crochets numérotés, cadence de prose très généralisante. La boucle mérite d'être nommée plutôt que dissimulée&nbsp;: la prudence recommandée ici pour lire le dossier Arizona s'applique, à l'identique, à cette page.</p>
+  </div>
+</section>
+
+<section id="tient">
+  <div class="wrap">
+    <div class="kicker">01 — Ce qui tient</div>
+    <h2>Des qualités méthodologiques réelles, à ne pas sous-estimer</h2>
+    <p>Avant la critique, la reconnaissance de ce qui fonctionne — parce que ce n'est pas la norme dans l'analyse politique en ligne, et parce qu'une critique qui l'ignore n'est pas honnête non plus.</p>
+    <ul>
+      <li><strong>Les désaccords sont datés, pas résolus artificiellement.</strong> Quand le gouvernement, le Comité de monitoring, la BNB et la Cour des comptes avancent quatre chiffres différents pour le même effort budgétaire, le dossier les cite tous les quatre, avec leur date et leur institution, plutôt que de choisir celui qui sert la meilleure histoire.</li>
+      <li><strong>Les angles morts sont nommés en propre.</strong> La section « Angles morts assumés » du premier dossier liste explicitement ce que le corpus documente mal — la dynamique intra-N-VA, le rôle réel du Roi, la dimension de genre des réformes. Peu d'analyses politiques grand public font cet effort de bornage.</li>
+      <li><strong>Le lexique et les notes de méthode réduisent l'effet de mystification.</strong> Expliquer ce qu'est un « douzième provisoire » ou une « majorité alternative » avant de s'en servir est un choix éditorial simple, et pourtant rare.</li>
+      <li><strong>Les scénarios sont présentés comme des probabilités d'analyste, pas des prédictions.</strong> La section « Prospective » du premier dossier le dit noir sur blanc&nbsp;: plusieurs « moments de bascule » annoncés depuis 2025 ne se sont pas produits. C'est le genre d'aveu qu'un lecteur ne trouve pas dans la plupart des commentaires politiques à échéance fixe.</li>
+    </ul>
+    <div class="box">
+      <span class="label">Lecture critique</span>
+      <p>Ce socle mérite d'être dit clairement&nbsp;: la couche <em>factuelle</em> des deux dossiers — dates, votes, montants officiels — est globalement solide et bien attribuée. Le reste de cette page porte presque entièrement sur la couche <em>interprétative</em> — relations, motivations, mise en scène, probabilités — qui est d'une autre nature, et que le dossier lui-même distingue mal typographiquement du premier.</p>
+    </div>
+  </div>
+</section>
+
+<section id="verifiable">
+  <div class="wrap">
+    <div class="kicker">02 — Ce qu'on ne vérifie pas depuis l'extérieur</div>
+    <h2>Une chaîne de confiance qu'on ne peut pas remonter</h2>
+    <p>La méthode annoncée est celle-ci&nbsp;: un corpus de sept rapports documentaires, confronté à la presse de référence. C'est une méthode raisonnable — mais elle crée une chaîne de médiation que le lecteur ne peut inspecter qu'à son dernier maillon&nbsp;: l'événement, puis un rapport sur l'événement, puis la synthèse de ce rapport dans le corpus, puis la synthèse du corpus dans le dossier, puis la phrase que vous lisez. Chaque maillon peut introduire une dérive de bonne foi — un qualificatif perdu à la paraphrase, une citation traduite du néerlandais, un « presque » qui disparaît en cours de route.</p>
+    <p>Le dossier est honnête sur ce point pour les récits de coulisse — il les attribue à « des sources anonymes ou des éditorialistes » et le redit dans sa section méthode. Mais cette honnêteté ne rend pas le lecteur capable de vérifier lui-même&nbsp;: un classement du <em>Vif</em> cité « partiellement vérifié derrière paywall » reste, par construction, invérifiable pour qui n'a pas l'abonnement.</p>
+
+    <div class="box dim">
+      <span class="label">Ce qu'on ne peut pas vérifier</span>
+      <p>Les sept rapports du corpus ne sont pas publiés ni liés depuis les dossiers. Toute affirmation attribuée au « corpus documentaire » — et il y en a beaucoup, notamment dans la cartographie des relations — repose donc sur la confiance faite à la synthèse, pas sur un accès direct à la source primaire.</p>
+    </div>
+
+    <h3>La question, propre à 2026, de la sous-traitance de la recherche</h3>
+    <p>Un point plus spécifique à l'époque&nbsp;: certains documents du corpus, tels qu'on peut les observer, portent des traits caractéristiques d'une rédaction assistée par des outils de « recherche approfondie » — citations en chiffres entre crochets à haute densité, prose de synthèse très généralisante, structure argumentative répétitive. Ce n'est pas disqualifiant en soi&nbsp;: bien utilisés, ces outils accélèrent une synthèse par ailleurs légitime. Mais cela change ce que « sourcé » veut dire&nbsp;: une chaîne de citations produite par un agent de recherche mérite la même vérification ponctuelle que celle d'un assistant de recherche humain, et la section Sources des dossiers ne distingue pas aujourd'hui les documents de presse primaire des rapports de synthèse intermédiaires.</p>
+  </div>
+</section>
+
+<section id="rhetorique">
+  <div class="wrap">
+    <div class="kicker">03 — La rhétorique du dossier « neutre »</div>
+    <h2>Habillage de rigueur, structure de plaidoyer</h2>
+    <p>Le premier dossier annonce, dès son ouverture, « trois convictions » qui structurent la lecture — avant l'essentiel des preuves. C'est la structure d'un essai argumentatif, pas d'une dépêche&nbsp;: une thèse posée d'abord, des faits mobilisés ensuite à son service. Rien d'illégitime — c'est un genre reconnu, l'analyse longue à point de vue assumé — mais il est présenté avec le vocabulaire visuel du journalisme de service neutre&nbsp;: cartes de statistiques, encadrés méthode, FAQ balisée, annexe sources. Cet emballage peut emprunter à l'un plus d'autorité que l'autre n'en revendique vraiment.</p>
+
+    <p>Les figures de style choisies sont mémorables, et souvent justes — mais elles font, elles aussi, un travail interprétatif propre&nbsp;:</p>
+
+    <div class="example">
+      <div class="claim">« Capitaine d'un navire en naufrage » — métaphore filée sur tout le dossier pour décrire De Wever</div>
+      <div class="rating"><div class="jauge" data-level="3"><span class="seg"></span><span class="seg"></span><span class="seg"></span><span class="seg"></span></div> niveau 3 — citation réelle, mais l'image devient le cadre interprétatif de 45 minutes de lecture</div>
+      <div class="gloss">Un « naufrage » est un jugement narratif bien plus fort que « quatre révisions à la hausse de la trajectoire budgétaire ». Une fois posée, la métaphore continue de travailler longtemps après que le lecteur a oublié la nuance qui l'accompagnait.</div>
+    </div>
+
+    <div class="example">
+      <div class="claim">De Wever et Rousseau, « les véritables co-présidents de la rue de la Loi » — formule attribuée à HLN</div>
+      <div class="rating"><div class="jauge" data-level="3"><span class="seg"></span><span class="seg"></span><span class="seg"></span><span class="seg"></span></div> niveau 3 — formule éditoriale d'un titre de presse, présentée sans distance critique propre</div>
+      <div class="gloss">La citation est correctement attribuée à sa source. Mais reprise sans commentaire, une formule aussi tranchée devient, dans l'économie du dossier, un fait de cartographie relationnelle plutôt qu'une opinion de rédaction parmi d'autres.</div>
+    </div>
+
+    <div class="box">
+      <span class="label">Lecture critique</span>
+      <p>Rien de tout cela ne signifie que le dossier « ment ». Cela signifie qu'il <em>choisit</em>, à chaque page, et que ce choix — quelle image ouvre la section, quelle citation la ferme — pèse autant sur la lecture que les chiffres eux-mêmes. Un lecteur pressé retient l'image du sous-marin de De Wever bien après avoir oublié l'écart de 3,9 milliards entre deux estimations du même effort budgétaire.</p>
+    </div>
+  </div>
+</section>
+
+<section id="chiffres">
+  <div class="wrap">
+    <div class="kicker">04 — Les chiffres</div>
+    <h2>Précision apparente, incertitude réelle</h2>
+    <p>Le dossier budget fait un travail net sur un point difficile&nbsp;: montrer que l'estimation de l'effort restant varie d'un facteur trois à quatre selon qui la calcule (3-4&nbsp;Md€ pour le gouvernement au printemps 2026, contre 11-14&nbsp;Md€ pour la BNB). C'est un écart réel, institutionnellement documenté, et le garder visible plutôt que de le lisser est la bonne décision éditoriale.</p>
+
+    <div class="example">
+      <div class="claim">Déficit public 2025&nbsp;: <b>5,3&nbsp;%</b> du PIB, le plus élevé de la zone euro</div>
+      <div class="rating"><div class="jauge" data-level="1"><span class="seg"></span><span class="seg"></span><span class="seg"></span><span class="seg"></span></div> niveau 1 — Commission européenne, prévisions d'automne du 17&nbsp;novembre 2025</div>
+      <div class="gloss">Chiffre institutionnel daté, sans ambiguïté. Citable tel quel.</div>
+    </div>
+
+    <div class="example">
+      <div class="claim">Dette publique projetée entre <b>145 et 165&nbsp;%</b> du PIB en 2042</div>
+      <div class="rating"><div class="jauge" data-level="4"><span class="seg"></span><span class="seg"></span><span class="seg"></span><span class="seg"></span></div> niveau 4 — étiqueté « extrapolation Ouaisfieu », explicitement pas une prévision officielle</div>
+      <div class="gloss">Le texte de légende est honnête. Mais le chiffre est rendu dans un tableau au format identique à celui des données 2026-2029, officiellement sourcées, juste au-dessus. Un lecteur qui parcourt vite retient le tableau, pas la légende en petits caractères qui le qualifie.</div>
+    </div>
+
+    <p>Ce dernier point mérite d'être creusé&nbsp;: un tableau chiffré porte, par sa forme même, une autorité que la prose n'a pas — même quand le texte qui l'entoure prend soin de la relativiser. C'est un problème de hiérarchie de l'information plus que d'honnêteté&nbsp;: rien n'est caché, mais tout n'est pas également mémorisé.</p>
+
+    <h3>Une régularité sous-nommée&nbsp;: le sens des révisions</h3>
+    <p>L'effort budgétaire manquant a été révisé à la hausse quatre fois en sept mois&nbsp;: 4,9&nbsp;Md€ en mars, 6,7&nbsp;Md€ en mai-juin, 7,7&nbsp;Md€ le 6&nbsp;juillet, engagement gouvernemental à 10&nbsp;Md€ le 10&nbsp;juillet. Le dossier budget présente correctement chaque chiffre daté. Ce qu'il souligne moins, c'est que la <em>direction</em> de ces révisions n'a jamais varié — toujours à la hausse, jamais à la baisse. Ce n'est pas juste « des institutions qui ne sont pas d'accord »&nbsp;; c'est un motif à part entière, qui mériterait d'être nommé comme tel plutôt que noyé dans une chronologie neutre.</p>
+  </div>
+</section>
+
+<section id="manque">
+  <div class="wrap">
+    <div class="kicker">05 — Qui manque à l'appel</div>
+    <h2>Une coalition vue depuis ses cinq présidents</h2>
+    <p>Les deux dossiers organisent presque tout leur récit autour de cinq figures et de leurs relations, plus des agrégats macrobudgétaires. C'est un choix de portée cohérent pour un texte qui se présente comme une « anatomie de coalition » — mais c'est un choix, et il détermine ce qui compte comme « l'histoire Arizona » pour qui n'a que ces deux pages comme point d'entrée.</p>
+    <ul>
+      <li>Les <strong>≈184&nbsp;000 personnes</strong> concernées par la limitation du chômage à deux ans apparaissent comme un total, jamais comme une voix sourcée.</li>
+      <li>Les <strong>CPAS</strong>, qui absorbent un coût réel estimé par la Cour des comptes à 709&nbsp;millions d'euros — 360&nbsp;millions de plus que prévu — n'ont pas de porte-parole cité dans le corps du texte.</li>
+      <li>Les partis hors coalition (PS, PTB, Vlaams&nbsp;Belang) apparaissent surtout via l'argument TINA (« aucune autre majorité arithmétique ») — presque jamais via leurs propres critiques budgétaires chiffrées, alors même que certaines recoupent des constats déjà validés par la Cour des comptes (le taux de retour à l'emploi contesté, par exemple).</li>
+    </ul>
+    <div class="box dim">
+      <span class="label">Point aveugle</span>
+      <p>« La rue » est traitée presque exclusivement comme masse — un décompte de manifestants, deux chiffres qui divergent entre police et syndicats. C'est honnête sur le désaccord des chiffres, mais cela réduit un mouvement social à sa seule taille, jamais à ses raisons dans les mots de ceux qui y participent.</p>
+    </div>
+  </div>
+</section>
+
+<section id="paradoxe">
+  <div class="wrap">
+    <div class="kicker">06 — Citoyen et contre-analyse</div>
+    <h2>Le paradoxe d'une neutralité revendiquée</h2>
+    <p>Ouaisfieu se présente, en pied de page, comme un « projet citoyen de veille et de <strong>contre-analyse</strong> des politiques publiques belges ». « Contre-analyse » suppose une posture correctrice — contre quelque chose, vraisemblablement contre la communication gouvernementale ou contre un cadrage médiatique dominant jugé insuffisant. Cette posture n'a rien de problématique en soi&nbsp;: une bonne partie du bon journalisme d'enquête fonctionne exactement ainsi.</p>
+    <p>Mais le registre visuel et rhétorique choisi — grilles de statistiques, FAQ balisée, citations institutionnelles datées — emprunte l'esthétique du journalisme de service « vue de nulle part ». La combinaison n'est pas malhonnête, mais elle mérite d'être nommée aussi clairement que le sont les sources&nbsp;: un lecteur profite autant de savoir ce qu'est une source que de savoir ce pour quoi un projet existe.</p>
+  </div>
+</section>
+
+<section id="progres">
+  <div class="wrap">
+    <div class="kicker">07 — Ce qui ferait progresser le dossier</div>
+    <h2>Cinq pistes concrètes, pas seulement des réserves</h2>
+    <ol class="plain">
+      <li><strong>Publier ou résumer structurellement les sept rapports du corpus</strong>, avec leurs dates, pour que les affirmations attribuées au « corpus documentaire » deviennent vérifiables par le lecteur, pas seulement crédibles sur parole.</li>
+      <li><strong>Tenir un tableau de suivi des cinq scénarios</strong> (A à E) à chaque mise à jour — ce qui s'est produit, daté, en regard de ce qui avait été projeté. Cela transformerait des probabilités d'analyste en bilan public et vérifiable dans le temps, ce qui est rare dans le commentaire politique.</li>
+      <li><strong>Distinguer typographiquement, pas seulement en légende</strong>, les chiffres officiellement sourcés des extrapolations d'analyste — par exemple un marquage visuel permanent sur les cellules extrapolées, plutôt qu'une note en dessous du tableau.</li>
+      <li><strong>Nommer le titre de presse même pour les récits de coulisse paraphrasés</strong>, afin qu'un lecteur puisse localiser et évaluer lui-même la source d'origine.</li>
+      <li><strong>Donner une voix directement sourcée</strong> à au moins un acteur hors du pentagone des cinq présidents — un directeur de CPAS, un syndicaliste, un porte-parole budgétaire de l'opposition — non pour rééquilibrer la politique, mais pour élargir qui compte comme témoin de sa propre situation.</li>
+    </ol>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="kicker">08 — En bref</div>
+    <h2>Trois questions directes</h2>
+
+    <div class="faq-item">
+      <div class="q">Ce dossier Arizona est-il fiable&nbsp;?</div>
+      <div class="a">Sa couche factuelle — dates, votes, montants officiels — est globalement bien sourcée et datée, et peut être citée directement. Sa couche interprétative — relations, motivations, probabilités de scénario — est présentée comme telle, mais repose sur un corpus que le lecteur ne peut pas auditer lui-même. Traiter la distinction fait/interprétation comme l'outil qu'elle est censée être, pas comme une garantie.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="q">Faut-il le lire comme du journalisme neutre&nbsp;?</div>
+      <div class="a">Plutôt comme une analyse longue, à point de vue assumé dès l'ouverture (« trois convictions »), qui emprunte certains codes visuels du journalisme de service neutre. Reconnaître le genre change le poids à accorder au cadrage par rapport aux faits pris un par un.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="q">Que vérifier soi-même avant de citer ce dossier&nbsp;?</div>
+      <div class="a">Un chiffre de niveau&nbsp;1 (institution nommée, date précise) se cite directement. Une affirmation de niveau&nbsp;3 ou 4 — coulisses, extrapolation — se cite comme la lecture de Ouaisfieu, pas comme un fait établi indépendamment.</div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-nav">
+      <a href="https://ouaisfieu.github.io/arizona/">← Le dossier Arizona complet</a>
+      <a href="https://ouaisfieu.github.io/arizona/budget/">← Le Budget Arizona, chiffre par chiffre</a>
+      <a href="#haut">Remonter en haut de page</a>
+    </div>
+    <p class="fine">
+      Note de méthode de cette page&nbsp;: rédigée le 25&nbsp;juillet 2026 par un assistant IA (Claude, Anthropic) à la demande de l'auteur du site, à partir d'une lecture des deux dossiers liés ci-dessus tels que publiés à cette date. Elle porte sur la méthode et la mise en forme de ces dossiers, pas sur le jugement politique des mesures qu'ils décrivent. Elle devrait être relue après le conclave budgétaire de septembre 2026 et toute mise à jour substantielle des dossiers qu'elle commente.
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
