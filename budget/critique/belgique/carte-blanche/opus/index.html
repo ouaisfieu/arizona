@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="fr-BE">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- ─────────── SEO : balises primaires ─────────── -->
+<title>Failles démocratiques en Belgique : particratie, opacité, État de droit</title>
+<meta name="description" content="Particratie, opacité administrative, 16 000 décisions de justice non exécutées, référendum verrouillé : anatomie sourcée des failles démocratiques belges et de leurs effets sur le citoyen.">
+<link rel="canonical" href="https://ouaisfieu.github.io/arizona/budget/critique/belgique/carte-blanche/opus/">
+<link rel="alternate" hreflang="fr-be" href="https://ouaisfieu.github.io/arizona/budget/critique/belgique/carte-blanche/opus/">
+<link rel="alternate" hreflang="x-default" href="https://ouaisfieu.github.io/arizona/budget/critique/belgique/carte-blanche/opus/">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta name="author" content="Ouais Fieu">
+<meta name="keywords" content="particratie, Belgique, État de droit, financement des partis, Fedasil, astreintes, Camara c. Belgique, référendum, démocratie délibérative, Ostbelgien, IWEPS, GRECO">
+
+<!-- ─────────── Partage social ─────────── -->
+<meta property="og:type" content="article">
+<meta property="og:locale" content="fr_BE">
+<meta property="og:site_name" content="Ouais Fieu — critique budgétaire et institutionnelle">
+<meta property="og:title" content="Failles démocratiques en Belgique : particratie, opacité, État de droit">
+<meta property="og:description" content="Particratie, cabinetocratie, jugements non exécutés, référendum verrouillé : anatomie sourcée d'un système qui éloigne la décision du citoyen.">
+<meta property="og:url" content="https://ouaisfieu.github.io/arizona/budget/critique/belgique/carte-blanche/opus/">
+<meta property="og:image" content="https://ouaisfieu.github.io/arizona/budget/critique/belgique/carte-blanche/opus/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Titre de la carte blanche sur les failles démocratiques belges">
+<meta property="article:published_time" content="2026-07-26">
+<meta property="article:section" content="Politique belge">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Failles démocratiques en Belgique : particratie, opacité, État de droit">
+<meta name="twitter:description" content="Particratie, cabinetocratie, jugements non exécutés, référendum verrouillé : anatomie sourcée d'un système qui éloigne la décision du citoyen.">
+<meta name="twitter:image" content="https://ouaisfieu.github.io/arizona/budget/critique/belgique/carte-blanche/opus/og-image.png">
+<meta name="theme-color" content="#EBEBE4" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14161A" media="(prefers-color-scheme: dark)">
+
+<!-- ─────────── Typographie ─────────── -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Spectral:ital,wght@0,300;0,400;0,600;1,400&family=Zilla+Slab:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ══════════ Jetons ══════════ */
+:root{
+  --papier:#EBEBE4;
+  --papier-2:#F5F5EF;
+  --encre:#171A1C;
+  --encre-2:#535A5E;
+  --filet:#C7C8BF;
+  --cachet:#4B3A93;
+  --alerte:#A31C2B;
+  --surlignage:rgba(75,58,147,.10);
+
+  --display:"Zilla Slab",Rockwell,"Roboto Slab",Georgia,serif;
+  --texte:"Spectral","Iowan Old Style",Palatino,Georgia,serif;
+  --util:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+
+  --marge:13ch;
+  --gouttiere:2.5rem;
+  --mesure:66ch;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --papier:#14161A; --papier-2:#1C1F25; --encre:#E8E8E0; --encre-2:#A2A7A3;
+    --filet:#333941; --cachet:#AA9DEA; --alerte:#E4737E; --surlignage:rgba(170,157,234,.12);
+  }
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%; scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+body{
+  margin:0;
+  background:var(--papier);
+  color:var(--encre);
+  font-family:var(--texte);
+  font-size:clamp(1.02rem,.96rem + .3vw,1.16rem);
+  line-height:1.68;
+  font-weight:400;
+  text-rendering:optimizeLegibility;
+}
+
+/* Fin liseré de progression de lecture (CSS pur, dégradation propre) */
+.progression{position:fixed; inset:0 auto auto 0; height:2px; width:100%; background:var(--cachet); transform-origin:0 50%; transform:scaleX(0); z-index:50}
+@supports (animation-timeline:scroll()){
+  .progression{animation:jauge linear both; animation-timeline:scroll(root block)}
+  @keyframes jauge{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+}
+@media (prefers-reduced-motion:reduce){.progression{display:none}}
+
+/* ══════════ Squelette ══════════ */
+.enveloppe{max-width:calc(var(--marge) + var(--gouttiere) + var(--mesure) + 2rem); margin-inline:auto; padding:0 1.25rem}
+
+.rangee{display:grid; grid-template-columns:var(--marge) 1fr; column-gap:var(--gouttiere)}
+@media (max-width:820px){
+  .rangee{grid-template-columns:1fr; row-gap:.6rem}
+}
+
+/* Colonne de marge : l'appareil critique */
+.marge{
+  font-family:var(--util); font-size:.72rem; line-height:1.5;
+  letter-spacing:.04em; color:var(--encre-2);
+  text-align:right; padding-top:.55rem;
+}
+@media (max-width:820px){
+  .marge{text-align:left; border-left:2px solid var(--cachet); padding:.15rem 0 .15rem .7rem}
+}
+.marge b{display:block; font-weight:600; color:var(--cachet); letter-spacing:.14em; text-transform:uppercase}
+
+.corps{max-width:var(--mesure)}
+
+/* ══════════ Liens utilitaires ══════════ */
+.evitement{position:absolute; left:-9999px}
+.evitement:focus{left:1rem; top:1rem; z-index:99; background:var(--papier-2); color:var(--encre); padding:.6rem 1rem; border:2px solid var(--cachet)}
+a{color:inherit; text-decoration-color:var(--cachet); text-underline-offset:.18em; text-decoration-thickness:from-font}
+a:hover{background:var(--surlignage)}
+:focus-visible{outline:2px solid var(--cachet); outline-offset:3px}
+
+/* ══════════ Bandeau ══════════ */
+.bandeau{border-bottom:1px solid var(--filet); padding:.85rem 0; font-family:var(--util); font-size:.7rem; letter-spacing:.1em; text-transform:uppercase; color:var(--encre-2)}
+.fil{display:flex; flex-wrap:wrap; gap:.45rem; list-style:none; margin:0; padding:0}
+.fil li::after{content:"›"; padding-left:.45rem; color:var(--filet)}
+.fil li:last-child::after{content:""}
+
+/* ══════════ Une ══════════ */
+.une{padding:clamp(2.5rem,7vw,5rem) 0 2rem}
+.chapeau-genre{font-family:var(--util); font-size:.72rem; letter-spacing:.22em; text-transform:uppercase; color:var(--alerte); margin:0 0 1.4rem; display:flex; flex-wrap:wrap; gap:.9rem; align-items:center}
+.chapeau-genre span{color:var(--encre-2)}
+
+h1{
+  font-family:var(--display); font-weight:600;
+  font-size:clamp(2.15rem,1.1rem + 4.4vw,4rem);
+  line-height:1.02; letter-spacing:-.022em;
+  margin:0 0 1.1rem; text-wrap:balance;
+}
+h1 em{font-style:normal; color:var(--cachet)}
+
+.sous-titre{font-size:clamp(1.12rem,1rem + .5vw,1.4rem); font-weight:300; line-height:1.45; color:var(--encre-2); margin:0 0 2.2rem; max-width:52ch; text-wrap:pretty}
+
+.signature{font-family:var(--util); font-size:.75rem; letter-spacing:.05em; color:var(--encre-2); border-top:1px solid var(--filet); border-bottom:1px solid var(--filet); padding:.8rem 0; display:flex; flex-wrap:wrap; gap:.4rem 1.6rem}
+.signature b{font-weight:600; color:var(--encre)}
+
+/* ══════════ Relevé de chiffres ══════════ */
+.releve{margin:3rem 0; border-top:2px solid var(--encre); border-bottom:1px solid var(--filet)}
+.releve h2{font-family:var(--util); font-size:.72rem; font-weight:600; letter-spacing:.2em; text-transform:uppercase; margin:.8rem 0 1.4rem; color:var(--encre-2)}
+.releve dl{margin:0 0 1.6rem; display:grid; gap:1.4rem 2.4rem; grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
+.releve dt{font-family:var(--display); font-weight:700; font-size:clamp(1.6rem,1.2rem + 1.4vw,2.35rem); line-height:1; letter-spacing:-.02em; color:var(--cachet)}
+.releve dd{margin:.45rem 0 0; font-size:.9rem; line-height:1.45; color:var(--encre-2)}
+.releve dd b{display:block; color:var(--encre); font-weight:600; font-size:.95rem}
+
+/* ══════════ Sommaire ══════════ */
+.sommaire{border:1px solid var(--filet); background:var(--papier-2); padding:1.4rem 1.5rem; margin:2.5rem 0}
+.sommaire h2{font-family:var(--util); font-size:.72rem; letter-spacing:.2em; text-transform:uppercase; margin:0 0 1rem; color:var(--encre-2); font-weight:600}
+.sommaire ol{margin:0; padding:0; list-style:none; counter-reset:som; columns:2; column-gap:2.5rem}
+@media (max-width:640px){.sommaire ol{columns:1}}
+.sommaire li{counter-increment:som; break-inside:avoid; margin:0 0 .5rem; font-size:.94rem; line-height:1.4}
+.sommaire li::before{content:counter(som,upper-roman) ". "; font-family:var(--util); font-size:.74rem; color:var(--cachet); font-weight:600}
+.sommaire a{text-decoration:none}
+.sommaire a:hover{text-decoration:underline}
+.sommaire a[aria-current="true"]{color:var(--cachet); font-weight:600}
+
+/* ══════════ Sections ══════════ */
+.partie{padding:2.8rem 0 .5rem; border-top:1px solid var(--filet); scroll-margin-top:1.5rem}
+#particratie{border-top:2px solid var(--encre)}
+[id]{scroll-margin-top:1.5rem}
+
+h2.titre{font-family:var(--display); font-weight:600; font-size:clamp(1.55rem,1.2rem + 1.3vw,2.25rem); line-height:1.12; letter-spacing:-.015em; margin:0 0 1.1rem; text-wrap:balance}
+h3{font-family:var(--display); font-weight:500; font-size:clamp(1.1rem,1rem + .45vw,1.32rem); line-height:1.25; margin:2.2rem 0 .7rem; color:var(--encre)}
+p{margin:0 0 1.15rem; text-wrap:pretty}
+.chapo{font-size:1.08em; line-height:1.6; color:var(--encre)}
+.chapo::first-letter{font-family:var(--display); font-weight:700; font-size:3.1em; float:left; line-height:.82; padding:.06em .1em 0 0; color:var(--cachet)}
+
+strong{font-weight:600}
+abbr[title]{text-decoration:underline dotted; text-decoration-color:var(--filet); cursor:help}
+
+blockquote{margin:1.8rem 0; padding:0 0 0 1.4rem; border-left:3px solid var(--cachet); font-size:1.06em; line-height:1.5}
+blockquote p{margin:0 0 .5rem; font-style:italic}
+blockquote footer{font-family:var(--util); font-style:normal; font-size:.74rem; letter-spacing:.04em; color:var(--encre-2); text-transform:uppercase}
+
+ul.liste{margin:0 0 1.3rem; padding:0; list-style:none}
+ul.liste li{position:relative; padding-left:1.4rem; margin-bottom:.7rem}
+ul.liste li::before{content:"—"; position:absolute; left:0; color:var(--cachet); font-family:var(--util)}
+
+/* Cachet — élément signature, décoratif */
+.cachet{
+  display:inline-block; transform:rotate(-5.5deg);
+  border:2px solid var(--alerte); border-radius:3px;
+  padding:.5rem .95rem; margin:1.6rem 0 2rem;
+  color:var(--alerte); font-family:var(--util); font-weight:600;
+  font-size:.82rem; letter-spacing:.2em; text-transform:uppercase;
+  box-shadow:0 0 0 3px var(--papier), 0 0 0 4px var(--alerte);
+  opacity:.9;
+}
+.cachet small{display:block; font-size:.62rem; letter-spacing:.1em; font-weight:400; margin-top:.25rem; opacity:.85}
+
+/* Tableau */
+.tableau{margin:2rem 0; overflow-x:auto}
+table{border-collapse:collapse; width:100%; font-size:.88rem; font-family:var(--util)}
+caption{text-align:left; font-family:var(--util); font-size:.7rem; letter-spacing:.14em; text-transform:uppercase; color:var(--encre-2); padding-bottom:.7rem}
+th,td{text-align:left; padding:.55rem .8rem .55rem 0; border-bottom:1px solid var(--filet); vertical-align:top}
+thead th{border-bottom:1.5px solid var(--encre); font-weight:600; font-size:.7rem; letter-spacing:.1em; text-transform:uppercase}
+tbody th{font-weight:500}
+td.n{font-variant-numeric:tabular-nums; white-space:nowrap}
+
+/* Encadré */
+.encadre{border:1px solid var(--filet); border-left:4px solid var(--alerte); background:var(--papier-2); padding:1.3rem 1.4rem; margin:2.2rem 0}
+.encadre h3{margin:0 0 .6rem; font-size:1.02rem}
+.encadre p:last-child, .encadre ul:last-child{margin-bottom:0}
+
+/* FAQ */
+details{border-bottom:1px solid var(--filet); padding:.9rem 0}
+summary{cursor:pointer; font-family:var(--display); font-weight:500; font-size:1.06rem; line-height:1.35; list-style:none; display:flex; gap:.8rem; align-items:baseline}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"+"; font-family:var(--util); color:var(--cachet); font-weight:600; flex:none}
+details[open] summary::before{content:"–"}
+details > *:not(summary){margin-top:.8rem}
+
+/* Glossaire */
+.glossaire{margin:0}
+.glossaire dt{font-family:var(--display); font-weight:600; margin-top:1.2rem}
+.glossaire dd{margin:.25rem 0 0; color:var(--encre-2); font-size:.95rem}
+
+/* Sources */
+.sources ol{font-size:.85rem; line-height:1.5; padding-left:1.4rem}
+.sources li{margin-bottom:.55rem; overflow-wrap:anywhere}
+
+/* Pied */
+footer.pied{border-top:2px solid var(--encre); margin-top:3.5rem; padding:2rem 0 4rem; font-family:var(--util); font-size:.76rem; line-height:1.6; color:var(--encre-2)}
+footer.pied a{color:var(--cachet)}
+
+/* Apparition à l'ouverture */
+@media (prefers-reduced-motion:no-preference){
+  .une > *{animation:leve .7s cubic-bezier(.2,.7,.3,1) both}
+  .une > *:nth-child(2){animation-delay:.06s}
+  .une > *:nth-child(3){animation-delay:.12s}
+  .une > *:nth-child(4){animation-delay:.18s}
+  @keyframes leve{from{opacity:0; transform:translateY(10px)}to{opacity:1; transform:none}}
+}
+
+/* Impression */
+@media print{
+  :root{--papier:#fff; --papier-2:#fff; --encre:#000; --encre-2:#333; --filet:#bbb; --cachet:#000; --alerte:#000}
+  .progression,.sommaire,.bandeau{display:none}
+  .rangee{grid-template-columns:1fr}
+  a::after{content:" (" attr(href) ")"; font-size:.7em; word-break:break-all}
+  .sommaire a::after{content:""}
+}
+</style>
+
+<!-- ─────────── Données structurées (schema.org) ─────────── -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"WebSite",
+      "@id":"https://ouaisfieu.github.io/#site",
+      "name":"Ouais Fieu — critique budgétaire et institutionnelle",
+      "url":"https://ouaisfieu.github.io/",
+      "inLanguage":"fr-BE"
+    },
+    {
+      "@type":"WebPage",
+      "@id":"https://ouaisfieu.github.io/arizona/budget/critique/belgique/carte-blanche/opus/#page",
+      "url":"https://ouaisfieu.github.io/arizona/budget/critique/belgique/carte-blanche/opus/",
+      "name":"Failles démocratiques en Belgique : particratie, opacité, État de droit",
+      "isPartOf":{"@id":"https://ouaisfieu.github.io/#site"},
+      "inLanguage":"fr-BE",
+      "datePublished":"2026-07-26",
+      "dateModified":"2026-07-26",
+      "breadcrumb":{"@id":"https://ouaisfieu.github.io/arizona/budget/critique/belgique/carte-blanche/opus/#fil"},
+      "primaryImageOfPage":{"@id":"https://ouaisfieu.github.io/arizona/budget/critique/belgique/carte-blanche/opus/#image"}
+    },
+    {
+      "@type":"ImageObject",
+      "@id":"https://ouaisfieu.github.io/arizona/budget/critique/belgique/carte-blanche/opus/#image",
+      "url":"https://ouaisfieu.github.io/arizona/budget/critique/belgique/carte-blanche/opus/og-image.png",
+      "width":1200,
+      "height":630,
+      "caption":"Failles démocratiques en Belgique — carte blanche"
+    },
+    {
+      "@type":"BreadcrumbList",
+      "@id":"https://ouaisfieu.github.io/arizona/budget/critique/belgique/carte-blanche/opus/#fil",
+      "itemListElement":[
+        {"@type":"ListItem","position":1,"name":"Accueil","item":"https://ouaisfieu.github.io/"},
+        {"@type":"ListItem","position":2,"name":"Arizona","item":"https://ouaisfieu.github.io/arizona/"},
+        {"@type":"ListItem","position":3,"name":"Budget","item":"https://ouaisfieu.github.io/arizona/budget/"},
+        {"@type":"ListItem","position":4,"name":"Critique","item":"https://ouaisfieu.github.io/arizona/budget/critique/"},
+        {"@type":"ListItem","position":5,"name":"Belgique","item":"https://ouaisfieu.github.io/arizona/budget/critique/belgique/"},
+        {"@type":"ListItem","position":6,"name":"Carte blanche","item":"https://ouaisfieu.github.io/arizona/budget/critique/belgique/carte-blanche/"},
+        {"@type":"ListItem","position":7,"name":"Failles démocratiques en Belgique","item":"https://ouaisfieu.github.io/arizona/budget/critique/belgique/carte-blanche/opus/"}
+      ]
+    },
+    {
+      "@type":"OpinionNewsArticle",
+      "@id":"https://ouaisfieu.github.io/arizona/budget/critique/belgique/carte-blanche/opus/#article",
+      "headline":"Failles démocratiques en Belgique : particratie, opacité, État de droit",
+      "alternativeHeadline":"Anatomie sourcée d'un système qui éloigne la décision du citoyen",
+      "description":"Carte blanche documentée sur les failles démocratiques belges : particratie et mandat libre, financement public des partis, opacité administrative, décisions de justice non exécutées, verrou du référendum et effondrement de la confiance politique.",
+      "articleSection":"Politique belge",
+      "genre":"Carte blanche",
+      "inLanguage":"fr-BE",
+      "datePublished":"2026-07-26",
+      "dateModified":"2026-07-26",
+      "wordCount":3400,
+      "isAccessibleForFree":true,
+      "mainEntityOfPage":{"@id":"https://ouaisfieu.github.io/arizona/budget/critique/belgique/carte-blanche/opus/#page"},
+      "image":{"@id":"https://ouaisfieu.github.io/arizona/budget/critique/belgique/carte-blanche/opus/#image"},
+      "author":{"@type":"Organization","name":"Ouais Fieu","url":"https://ouaisfieu.github.io/"},
+      "publisher":{"@type":"Organization","name":"Ouais Fieu","url":"https://ouaisfieu.github.io/"},
+      "about":[
+        {"@type":"Thing","name":"Particratie","sameAs":"https://fr.wikipedia.org/wiki/Particratie"},
+        {"@type":"Thing","name":"État de droit","sameAs":"https://fr.wikipedia.org/wiki/%C3%89tat_de_droit"},
+        {"@type":"Thing","name":"Financement public des partis politiques en Belgique","sameAs":"https://fr.wikipedia.org/wiki/Financement_public_des_partis_politiques_en_Belgique"},
+        {"@type":"Thing","name":"Article 33 de la Constitution belge","sameAs":"https://fr.wikipedia.org/wiki/Article_33_de_la_Constitution_belge"},
+        {"@type":"Thing","name":"Politique en Belgique","sameAs":"https://fr.wikipedia.org/wiki/Politique_en_Belgique"}
+      ],
+      "mentions":[
+        {"@type":"GovernmentOrganization","name":"Fedasil","url":"https://www.fedasil.be/"},
+        {"@type":"Organization","name":"Cour européenne des droits de l'homme","sameAs":"https://fr.wikipedia.org/wiki/Cour_europ%C3%A9enne_des_droits_de_l%27homme"},
+        {"@type":"Organization","name":"GRECO","sameAs":"https://www.coe.int/fr/web/greco"},
+        {"@type":"Organization","name":"IWEPS","url":"https://www.iweps.be/"},
+        {"@type":"Organization","name":"Institut fédéral des droits humains","url":"https://institutfederaldroitshumains.be/"}
+      ]
+    },
+    {
+      "@type":"FAQPage",
+      "@id":"https://ouaisfieu.github.io/arizona/budget/critique/belgique/carte-blanche/opus/#faq",
+      "isPartOf":{"@id":"https://ouaisfieu.github.io/arizona/budget/critique/belgique/carte-blanche/opus/#page"},
+      "mainEntity":[
+        {"@type":"Question","name":"Qu'est-ce que la particratie belge ?",
+         "acceptedAnswer":{"@type":"Answer","text":"La particratie désigne un régime où les partis politiques, et surtout leurs présidents, constituent le centre de gravité réel de la décision publique : composition des listes électorales, désignation des ministres, négociation des accords de coalition, nominations à la haute fonction publique, aux entreprises publiques et à une partie de la Cour constitutionnelle. Le concept est documenté depuis les travaux de Wilfried Dewachter (1981) et fait l'objet d'un large consensus dans la littérature en science politique, même si son interprétation varie : dérive oligarchique pour les uns, variante de la démocratie des partis pour les autres."}},
+        {"@type":"Question","name":"Les députés belges sont-ils libres de voter comme ils l'entendent ?",
+         "acceptedAnswer":{"@type":"Answer","text":"En droit, oui. L'article 42 de la Constitution dispose que les membres des Chambres représentent la Nation et non uniquement leurs électeurs, ce dont découle l'interdiction du mandat impératif. En pratique, la discipline de parti s'impose par des contraintes indirectes : place sur les listes, avancement de carrière, financement, exclusion possible. Le siège appartient toutefois au parlementaire pour toute la législature, comme l'a montré le cas d'Emir Kir, exclu du PS en janvier 2020 mais resté député."}},
+        {"@type":"Question","name":"L'État belge exécute-t-il les décisions de justice rendues contre lui ?",
+         "acceptedAnswer":{"@type":"Answer","text":"Pas systématiquement. Depuis janvier 2022, plus de 16 000 décisions ordonnant l'hébergement de demandeurs de protection internationale n'ont pas été exécutées, et plus de 2 300 mesures provisoires ont été prononcées par la Cour européenne des droits de l'homme. Dans l'arrêt Camara et M.V. c. Belgique (2023), la Cour a constaté une violation de l'article 6 § 1 et évoqué une carence systémique. Des astreintes restent largement impayées, en matière d'accueil comme de surpopulation carcérale."}},
+        {"@type":"Question","name":"Le référendum est-il possible en Belgique ?",
+         "acceptedAnswer":{"@type":"Answer","text":"Non, pas sous forme contraignante. Sur la base de l'article 33 de la Constitution, la section de législation du Conseil d'État a estimé à plusieurs reprises (1985, 1989, 2002, 2004) que le référendum décisionnel était inconstitutionnel. Seule la consultation populaire, purement indicative, existe au niveau communal, provincial, régional wallon depuis 2014 et bruxellois depuis 2024. Une seule consultation nationale a eu lieu, en 1950, sur la Question royale."}},
+        {"@type":"Question","name":"Combien d'argent public reçoivent les partis politiques belges ?",
+         "acceptedAnswer":{"@type":"Answer","text":"Environ 83,7 millions d'euros de dotations directes en 2024 et 86,5 millions en 2025, selon les calculs de presse. Les subventions publiques représentent environ 77 à 80 % des revenus des partis. En y ajoutant la prise en charge des collaborateurs parlementaires, estimée à 104,6 millions pour 2024, le coût total avoisine 188 millions d'euros par an. Seuls les partis disposant déjà d'au moins un élu y ont droit."}},
+        {"@type":"Question","name":"Les assemblées citoyennes tirées au sort changent-elles quelque chose ?",
+         "acceptedAnswer":{"@type":"Answer","text":"Leur portée reste consultative. Le G1000 de 2011 n'a débouché sur aucune suite législative, et les 34 recommandations du panel We Need To Talk sur le financement des partis, présentées au Parlement en mai 2023, n'ont abouti à aucun consensus politique. Le modèle d'Ostbelgien, premier dialogue citoyen permanent au monde depuis 2019, oblige au moins le politique à répondre publiquement et de façon motivée dans l'année."}}
+      ]
+    },
+    {
+      "@type":"DefinedTermSet",
+      "@id":"https://ouaisfieu.github.io/arizona/budget/critique/belgique/carte-blanche/opus/#glossaire",
+      "name":"Glossaire institutionnel belge",
+      "hasDefinedTerm":[
+        {"@type":"DefinedTerm","name":"Particratie","description":"Régime dans lequel les partis politiques et leurs présidents concentrent la décision publique réelle."},
+        {"@type":"DefinedTerm","name":"Cabinetocratie","description":"Hypertrophie des cabinets ministériels, administration parallèle nommée sur base partisane, qui court-circuite l'administration statutaire."},
+        {"@type":"DefinedTerm","name":"Astreinte","description":"Somme d'argent par jour de retard qu'un juge impose à une partie condamnée pour la contraindre à exécuter sa décision."},
+        {"@type":"DefinedTerm","name":"Mandat impératif","description":"Obligation faite à un élu de suivre les instructions de ses mandants ou de son parti ; interdit en droit belge par l'article 42 de la Constitution."},
+        {"@type":"DefinedTerm","name":"Mini-public","description":"Assemblée de citoyens tirés au sort réunie pour délibérer et formuler des recommandations sur une question publique."},
+        {"@type":"DefinedTerm","name":"Consultation populaire","description":"Vote citoyen dont le résultat n'a qu'une valeur d'avis, sans effet juridique contraignant."}
+      ]
+    }
+  ]
+}
+</script>
+</head>
+
+<body>
+<div class="progression" aria-hidden="true"></div>
+<a class="evitement" href="#contenu">Aller au contenu</a>
+
+<div class="bandeau">
+  <div class="enveloppe">
+    <nav aria-label="Fil d'Ariane">
+      <ol class="fil">
+        <li><a href="https://ouaisfieu.github.io/">Accueil</a></li>
+        <li><a href="https://ouaisfieu.github.io/arizona/">Arizona</a></li>
+        <li><a href="https://ouaisfieu.github.io/arizona/budget/">Budget</a></li>
+        <li><a href="https://ouaisfieu.github.io/arizona/budget/critique/">Critique</a></li>
+        <li><a href="https://ouaisfieu.github.io/arizona/budget/critique/belgique/">Belgique</a></li>
+        <li aria-current="page">Carte blanche</li>
+      </ol>
+    </nav>
+  </div>
+</div>
+
+<main class="enveloppe" id="contenu">
+
+<article itemscope itemtype="https://schema.org/OpinionNewsArticle">
+
+  <!-- ══════════ Une ══════════ -->
+  <header class="une">
+    <p class="chapeau-genre">Carte blanche <span>·</span> <span>Institutions belges</span> <span>·</span> <span>État de droit</span></p>
+    <h1 itemprop="headline">Le pays où l'on gagne son procès contre l'État <em>sans jamais obtenir gain de cause</em></h1>
+    <p class="sous-titre" itemprop="description">Particratie, cabinetocratie, jugements non exécutés, référendum verrouillé : quatre mécaniques qui, mises bout à bout, expliquent pourquoi le pouvoir d'agir du citoyen belge se réduit à peu de chose — et ce que les chiffres disent vraiment.</p>
+    <p class="signature">
+      <span>Par <b itemprop="author">Ouais Fieu</b></span>
+      <span>Publié le <b><time itemprop="datePublished" datetime="2026-07-26">26 juillet 2026</time></b></span>
+      <span>Lecture <b>16 min</b></span>
+      <span>Sources <b>34 références</b></span>
+    </p>
+  </header>
+
+  <!-- ══════════ Relevé ══════════ -->
+  <section class="releve" aria-labelledby="releve-titre">
+    <h2 id="releve-titre">Relevé — six chiffres qui tiennent le dossier</h2>
+    <dl>
+      <div>
+        <dt>119<sup>e</sup>/136</dt>
+        <dd><b>Droit à l'information</b>Classement international RTI. Derrière le Kazakhstan et l'Arabie saoudite.</dd>
+      </div>
+      <div>
+        <dt>16 000+</dt>
+        <dd><b>Décisions d'accueil inexécutées</b>Condamnations de l'État et de Fedasil depuis janvier 2022.</dd>
+      </div>
+      <div>
+        <dt>~300 M€</dt>
+        <dd><b>Astreintes carcérales</b>Estimation de presse, agrégée sur plusieurs procédures en cours.</dd>
+      </div>
+      <div>
+        <dt>39 %</dt>
+        <dd><b>Confiance des Wallons dans l'État belge</b>Contre 71 % en 2018 (Baromètre social de la Wallonie, IWEPS).</dd>
+      </div>
+      <div>
+        <dt>86,5 M€</dt>
+        <dd><b>Dotation publique aux partis</b>Pour la seule année 2025, hors collaborateurs parlementaires.</dd>
+      </div>
+      <div>
+        <dt>541 jours</dt>
+        <dd><b>Record mondial de formation</b>Entre les élections de juin 2010 et le gouvernement Di Rupo.</dd>
+      </div>
+    </dl>
+  </section>
+
+  <!-- ══════════ Sommaire ══════════ -->
+  <nav class="sommaire" aria-labelledby="sommaire-titre">
+    <h2 id="sommaire-titre">Sommaire</h2>
+    <ol>
+      <li><a href="#particratie">La particratie et le mandat libre en trompe-l'œil</a></li>
+      <li><a href="#financement">Le financement public, ciment de l'appareil</a></li>
+      <li><a href="#opacite">Cabinetocratie et opacité d'État</a></li>
+      <li><a href="#etat-de-droit">L'État qui n'exécute pas ses propres jugements</a></li>
+      <li><a href="#verrou">Le verrou du référendum et l'illusion des mini-publics</a></li>
+      <li><a href="#consequences">Ce que cela fait au pouvoir d'agir</a></li>
+      <li><a href="#leviers">Quatre leviers qui restent ouverts</a></li>
+      <li><a href="#reserves">Réserves méthodologiques</a></li>
+      <li><a href="#questions">Questions fréquentes</a></li>
+      <li><a href="#glossaire">Glossaire</a></li>
+    </ol>
+  </nav>
+
+  <!-- ══════════ I ══════════ -->
+  <section class="partie rangee" id="particratie" aria-labelledby="t-particratie">
+    <aside class="marge"><b>§ I</b>Dewachter, 1981<br>Deschouwer, 2012<br>Art. 42 Const.</aside>
+    <div class="corps">
+      <h2 class="titre" id="t-particratie">La particratie et le mandat libre en trompe-l'œil</h2>
+      <p class="chapo">Il existe en Belgique un texte et une pratique, et ils ne racontent pas la même histoire. Le texte, c'est l'article 42 de la Constitution : les membres des deux Chambres représentent la Nation, et non uniquement ceux qui les ont élus. Il en découle l'interdiction du mandat impératif : juridiquement, un député n'est lié par la volonté de personne, pas même de son parti. La pratique, c'est un système où l'ordre des listes, l'accès aux fonctions ministérielles, la carrière et le financement passent tous par les mêmes bureaux.</p>
+
+      <p>Le caractère particratique du système belge ne fait plus débat dans la littérature scientifique. <strong>Wilfried Dewachter</strong> pose le diagnostic dès 1981 dans <cite>Res Publica</cite> : la Belgique est alors, avec l'Italie, le seul pays où les directions de parti — et non le chef de l'exécutif — constituent l'acteur dominant du système politique. <strong>Kris Deschouwer</strong> qualifie le pays de cas d'école du pilarisation et de la particratie dans <cite>The Politics of Belgium</cite> (Palgrave, 2012). Le <abbr title="Centre de recherche et d'information socio-politiques">CRISP</abbr> rappelle que le phénomène se construit entre la fin du XIX<sup>e</sup> siècle et l'entre-deux-guerres, avec le vote obligatoire instauré en 1893 et la structuration du Parlement en blocs disciplinés, remplaçant les notables autonomes du siècle précédent.</p>
+
+      <p>Aujourd'hui, les partis interviennent dans la désignation des ministres et secrétaires d'État, dans la nomination d'une série de fonctions — présidences d'entreprises publiques, une partie des juges de la Cour constitutionnelle — et dans la négociation d'accords de gouvernement si détaillés qu'ils lient à l'avance le travail parlementaire de toute la législature. C'est cette concentration que certains appellent, non sans raison, une <strong>« présidentocratie »</strong> : le président de parti décide de la participation à une coalition, pèse sur la composition du gouvernement, arbitre les nominations.</p>
+
+      <p>La discipline de parti n'est pourtant inscrite nulle part. Les juristes distinguent d'ailleurs la <span lang="nl"><i>partijdiscipline</i></span> — l'alignement volontaire — de la <span lang="nl"><i>partijdwang</i></span>, la contrainte. Ce sont les pressions indirectes qui font le travail : la place sur la liste suivante, l'accès aux commissions, le financement, l'exclusion. L'Association belge francophone de science politique le formule sobrement : dans les faits, la discipline s'impose par diverses contraintes implicites. Et l'Union interparlementaire rappelle de son côté que le mandat représentatif libre doit être protégé des ingérences, en ce compris celles des partis.</p>
+
+      <p>Le droit garde malgré tout une dent : combinée aux articles 65 et 70, la règle du mandat libre veut que le siège appartienne au parlementaire, et non au parti, pour toute la durée de la législature. C'est ainsi qu'<strong>Emir Kir</strong>, exclu du PS le 18 janvier 2020, a continué à siéger à la Chambre. Une exception qui confirme surtout que la contrainte, ailleurs, est politique et non juridique.</p>
+
+      <blockquote>
+        <p>La particratie est l'un des modèles de la démocratie, et le régime en place reste bel et bien une démocratie.</p>
+        <footer>— Émilie Van Haute, politologue (ULB), citée en contrepoint</footer>
+      </blockquote>
+
+      <p>Cette nuance compte, et il faut la garder en tête tout au long de ce dossier : la Belgique n'est pas une autocratie, elle figure régulièrement parmi les démocraties dites « complètes » des indices internationaux, et elle n'est pas le seul pays européen concerné. Le problème n'est pas la nature du régime. C'est la distance croissante entre l'endroit où la décision se prend et l'endroit où le citoyen est censé pouvoir agir sur elle.</p>
+    </div>
+  </section>
+
+  <!-- ══════════ II ══════════ -->
+  <section class="partie rangee" id="financement" aria-labelledby="t-financement">
+    <aside class="marge"><b>§ II</b>Loi du 4.7.1989<br>GRECO, cycle 5<br>≈ 80 % de fonds publics</aside>
+    <div class="corps">
+      <h2 class="titre" id="t-financement">Le financement public, ciment de l'appareil</h2>
+
+      <p>Un verrouillage de cette ampleur ne tient pas sans base matérielle. Avant la fin des années 1980, le financement des partis belges n'était quasiment pas régulé, ce qui les exposait aux bailleurs privés — l'affaire Agusta en reste l'illustration. La loi du 4 juillet 1989 a corrigé le tir en basculant vers un système presque entièrement public. L'objectif — soustraire les partis aux intérêts financiers — était défendable. L'effet cumulé, trois décennies plus tard, est une rente d'État.</p>
+
+      <p>Les partis belges tirent aujourd'hui <strong>environ 80 % de leurs revenus de fonds publics</strong>, un ratio nettement supérieur à celui de l'Allemagne ou des Pays-Bas, ce qui les rend financièrement indépendants de leurs propres membres. Pour la Chambre, un parti perçoit un forfait de base indexé — au-delà de 214 000 € par an en 2024 — assorti d'environ 3,66 € par voix obtenue, auquel s'ajoute une dotation supplémentaire au Sénat. La dotation totale atteignait 83,7 millions d'euros en 2024, puis 86,5 millions en 2025. Comme l'explique le professeur de finances publiques Herman Matthijs (VUB), le financement suit mécaniquement le nombre d'électeurs.</p>
+
+      <p>Il faut y ajouter la prise en charge, par les parlements, des collaborateurs parlementaires — souvent mutualisés et de fait chevilles ouvrières des appareils — estimée à <strong>104,6 millions d'euros pour 2024</strong>. Le coût de fonctionnement réel de l'écosystème partisan approche donc les <strong>188 millions d'euros par an</strong>. En 2024, le patrimoine cumulé des partis s'élevait à 163 millions, dont 127,6 millions nets de dettes.</p>
+
+      <div class="tableau">
+        <table>
+          <caption>Structure des revenus et patrimoine — exercice 2024</caption>
+          <thead>
+            <tr><th scope="col">Parti</th><th scope="col">Subventions directes</th><th scope="col">Contributions des mandataires</th><th scope="col">Cotisations des membres</th><th scope="col">Patrimoine net</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">N-VA</th><td class="n">84,4 %</td><td class="n">4,8 %</td><td class="n">2,1 %</td><td class="n">26,3 M€</td></tr>
+            <tr><th scope="row">PTB</th><td class="n">54,3 %</td><td class="n">23,1 %</td><td class="n">17,8 %</td><td class="n">n.d.</td></tr>
+            <tr><th scope="row">PS</th><td class="n">70,1 %</td><td class="n">15,5 %</td><td class="n">2,5 %</td><td class="n">n.d.</td></tr>
+            <tr><th scope="row">Open Vld</th><td class="n">n.d.</td><td class="n">n.d.</td><td class="n">n.d.</td><td class="n">5,7 M€</td></tr>
+            <tr><th scope="row">Groen</th><td class="n">n.d.</td><td class="n">n.d.</td><td class="n">n.d.</td><td class="n">5,0 M€</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>Deux conséquences en découlent. La première est un <strong>effet de seuil</strong> : seuls les partis disposant déjà d'au moins un élu ont droit à la dotation. La règle protège mécaniquement les formations installées contre l'arrivée de nouvelles listes, et transforme le renouvellement politique en pari financier privé. La seconde tient au contrôle. Le <abbr title="Groupe d'États contre la corruption, Conseil de l'Europe">GRECO</abbr> répète depuis des années que la commission parlementaire chargée de vérifier les comptes est composée pour l'essentiel de parlementaires — les contrôleurs et les contrôlés ne font qu'un, résume Bart Maddens (KU Leuven) — et que les sanctions sont rarissimes. Au terme du cinquième cycle d'évaluation, le Parlement belge obtient un score de 2 recommandations satisfaites sur 8 en matière de prévention de la corruption des parlementaires ; la Justice, elle, en satisfait 6 sur 7.</p>
+
+      <p>Sur ce point précis, un panel de 60 citoyens tirés au sort — l'initiative <strong>« We Need To Talk »</strong> — avait formulé 34 recommandations en 2023, en choisissant le sujet précisément parce que, sur le financement, les partis sont juges et parties. Présentées au Parlement en mai 2023, elles n'ont produit aucun consensus politique.</p>
+    </div>
+  </section>
+
+  <!-- ══════════ III ══════════ -->
+  <section class="partie rangee" id="opacite" aria-labelledby="t-opacite">
+    <aside class="marge"><b>§ III</b>Art. 32 Const.<br>Classement RTI<br>Convention de Tromsø</aside>
+    <div class="corps">
+      <h2 class="titre" id="t-opacite">Cabinetocratie et opacité d'État</h2>
+
+      <p>Dans le modèle classique des démocraties parlementaires, le ministre s'appuie sur une administration neutre, recrutée sur compétence, pour concevoir et évaluer les politiques publiques. En Belgique, la méfiance historique entre familles politiques et la volonté des partis de garder la main sur les rouages de l'État ont produit autre chose : le <strong>cabinet ministériel</strong>, entité constitutionnellement inexistante, souvent composée de dizaines de collaborateurs nommés de manière discrétionnaire, et fonctionnant de fait comme une administration parallèle.</p>
+
+      <p>La littérature académique n'est pas tendre. Marie Goransson (ULB) décrit des organes qui entravent le fonctionnement de l'administration en engendrant démotivation et déresponsabilisation de ses agents, dans un climat de clientélisme. Les nominations aux postes d'encadrement de la haute fonction publique sont décrites comme très politisées, l'administration étant largement tenue à l'écart de la décision. L'histoire économique belge garde la trace de ce que produit ce mode de gouvernance appliqué aux entreprises publiques ; l'effondrement de la Sabena en est le cas d'école.</p>
+
+      <h3>Le droit de savoir, sur le papier</h3>
+
+      <p>L'article 32 de la Constitution consacre pourtant le droit de consulter chaque document administratif et d'en obtenir copie. Dans les faits, la Belgique est classée <strong>119<sup>e</sup> sur 136</strong> au classement international <abbr title="Right to Information Rating">RTI</abbr> sur le droit à l'information — derrière le Kazakhstan et l'Arabie saoudite —, un constat relayé par l'Association des journalistes professionnels, la Ligue des droits humains et l'Association des archivistes. Une évaluation antérieure de la seule législation fédérale plaçait le pays 122<sup>e</sup> sur 139, avec un commentaire lapidaire sur l'ancienneté de la loi. Le régime est fragmenté entre niveaux de pouvoir, et son application jugée médiocre même là où les règles sont bonnes.</p>
+
+      <p>La <abbr title="Commission d'accès aux documents administratifs">CADA</abbr>, chargée d'examiner les refus d'accès, illustre la faiblesse du dispositif : ses avis ne sont, en pratique, pas contraignants. Un citoyen, une association ou un journaliste qui obtient gain de cause devant elle peut encore devoir engager une procédure judiciaire pour obtenir un document aussi élémentaire que la composition historique d'un cabinet ministériel ou l'étude technique justifiant une norme. La Commission européenne a épinglé la Belgique dans ses rapports sur l'état de droit : le projet fédéral d'amélioration de l'accès aux documents ne dote pas les organes de recours d'un pouvoir décisionnel contraignant, ne fusionne pas efficacement les régimes général et environnemental, et reste flou sur la motivation des refus. La ratification pleine et entière de la <strong>Convention de Tromsø</strong> du Conseil de l'Europe accuse, elle, un retard persistant.</p>
+
+      <p>Cette asymétrie a un effet peu discuté : elle donne à ceux qui détiennent les chiffres de l'administration un avantage narratif structurel. La vérification factuelle par les médias ou la société civile intervient nécessairement après coup, avec des moyens sans commune mesure — c'est la loi de Brandolini appliquée au débat public.</p>
+    </div>
+  </section>
+
+  <!-- ══════════ IV ══════════ -->
+  <section class="partie rangee" id="etat-de-droit" aria-labelledby="t-edd">
+    <aside class="marge"><b>§ IV</b>CEDH, 2023<br>Camara c. Belgique<br>Art. 6 § 1 CEDH<br>Mémorandum, 07.2024</aside>
+    <div class="corps">
+      <h2 class="titre" id="t-edd">L'État qui n'exécute pas ses propres jugements</h2>
+
+      <p>Si la particratie et l'opacité sont des pathologies chroniques, ce qui suit relève de l'aigu. Le principe fondateur de toute démocratie constitutionnelle est que l'exécutif est soumis à la loi et que le juge tranche. Lorsque l'État refuse publiquement d'exécuter les condamnations prononcées contre lui par ses propres tribunaux, ce n'est plus une question d'efficacité administrative.</p>
+
+      <div class="cachet" role="img" aria-label="Mention : décisions de justice non exécutées, plus de seize mille dossiers depuis 2022">
+        Non exécuté
+        <small>16 000+ décisions · depuis janvier 2022</small>
+      </div>
+
+      <h3>L'accueil des demandeurs de protection internationale</h3>
+
+      <p>La loi Accueil du 12 janvier 2007 et le droit européen obligent l'État à fournir un hébergement et une aide matérielle dès l'introduction d'une demande. Depuis janvier 2022, plus de <strong>16 000 décisions judiciaires</strong> ordonnant cet hébergement ont été prononcées par les juridictions nationales, et plus de <strong>2 300 mesures provisoires</strong> par la Cour européenne des droits de l'homme. Les juges ont rappelé qu'il s'agit d'une obligation de résultat, et que le manque de places ne constitue pas une force majeure exonératoire. Au 1<sup>er</sup> mars 2023, Fedasil avait déjà été condamné plus de 7 000 fois sans contester les ordonnances ni payer les astreintes.</p>
+
+      <p>Les montants ont suivi. Fin 2024, les astreintes cumulées dépassaient 6,75 millions d'euros sur plus de 527 dossiers, des associations obtenant en appel l'autorisation de saisir près de 2,9 millions sur les comptes de Fedasil. En septembre 2025, le stock atteignait environ 10,7 millions ; il serait retombé autour de 4 millions en avril 2026, en raison de l'extinction de certaines astreintes plutôt que de leur paiement. Interrogée au Parlement, la ministre de l'Asile et de la Migration <strong>Anneleen Van Bossuyt</strong> a assumé le choix de ne pas payer : verser ces montants impliquerait, selon elle, de fermer des places d'accueil dont des personnes ont besoin aujourd'hui.</p>
+
+      <h3>Camara c. Belgique : la sanction de Strasbourg</h3>
+
+      <p>L'affaire est devenue emblématique. Arrivé le 12 juillet 2022, un ressortissant guinéen se voit refuser une place trois jours plus tard. Le 22 juillet, le tribunal du travail de Bruxelles ordonne son hébergement immédiat par une décision exécutoire par provision. Il dormira néanmoins dans la rue jusqu'au 4 novembre, et n'obtiendra une place qu'après avoir saisi la CEDH en urgence. Dans son arrêt de juillet 2023, la Cour condamne la Belgique pour violation de l'<strong>article 6 § 1</strong> : le droit d'accès à un tribunal serait illusoire si une décision définitive pouvait rester lettre morte. Elle ne s'arrête pas à l'espèce et parle d'une <strong>carence systémique</strong> et d'un <strong>refus caractérisé</strong> des autorités.</p>
+
+      <h3>Prisons, climat, et le reste</h3>
+
+      <p>Le schéma se répète. À la suite d'une action lancée par Avocats.be en 2015, les cours d'appel de Liège, Bruxelles et Mons ont condamné l'État à réduire la surpopulation carcérale sous astreinte — typiquement 2 000 € par jour et par détenu au-delà de 110 % de la capacité. Le total pourrait avoisiner <strong>300 millions d'euros</strong> selon les estimations de presse d'avril 2026 : plus de 117 millions réclamés pour la seule prison de Lantin, près de 45 millions à Haren, un plafond de 50 millions évoqué pour Mons. Le juriste Marc Nihoul (UNamur) résume la situation d'une formule : un non-respect au carré de l'État de droit, puisque l'exécutif ne respecte ni la décision, ni l'astreinte censée l'y contraindre.</p>
+
+      <p>Côté climat, la Cour d'appel de Bruxelles a condamné le 30 novembre 2023 l'État fédéral, la Région flamande et la Région bruxelloise pour inaction, en leur enjoignant de réduire les émissions d'au moins 55 % d'ici 2030 par rapport à 1990 — un seuil qu'elle qualifie de minimum. C'est, après l'affaire néerlandaise Urgenda, la deuxième injonction chiffrée de ce type au monde. Aucune astreinte immédiate n'a toutefois été imposée : elle a été réservée dans l'attente des chiffres 2022-2024. Seule la Région flamande s'est pourvue en cassation.</p>
+
+      <h3>L'alerte des trois plus hautes juridictions</h3>
+
+      <p>En juillet 2024, fait rarissime, le président de la Cour constitutionnelle, le premier président de la Cour de cassation et le premier président du Conseil d'État ont cosigné un <strong>mémorandum commun</strong> adressé aux formateurs du gouvernement fédéral, rappelant le devoir de l'État d'exécuter les décisions de justice définitives. Le procureur général de Bruxelles, Frédéric Van Leeuw, a posé la question qui résume le dossier :</p>
+
+      <blockquote>
+        <p>Si le politique choisit les lois qu'il applique, que reste-t-il de la démocratie ?</p>
+        <footer>— Frédéric Van Leeuw, procureur général de Bruxelles</footer>
+      </blockquote>
+
+      <div class="encadre">
+        <h3>Pourquoi une victoire judiciaire ne suffit pas</h3>
+        <p>Les voies d'exécution forcée contre l'État sont peu efficaces : les biens affectés au service public bénéficient d'une quasi-immunité de saisie. L'État n'est pas un débiteur comme les autres, rappelle Marc Nihoul. Concrètement, un citoyen ou une ONG peut gagner contre l'État sans jamais obtenir l'exécution — ce qui vide de sa substance le droit à un procès équitable. Toute stratégie contentieuse doit donc anticiper l'exécution dès la mise en demeure : demande d'astreinte, commandements réitérés pour éviter la prescription des astreintes à six mois, et publicité de la décision.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ V ══════════ -->
+  <section class="partie rangee" id="verrou" aria-labelledby="t-verrou">
+    <aside class="marge"><b>§ V</b>Art. 33 Const.<br>Avis C.E. 1985, 1989,<br>2002, 2004<br>Ostbelgien, 2019</aside>
+    <div class="corps">
+      <h2 class="titre" id="t-verrou">Le verrou du référendum et l'illusion des mini-publics</h2>
+
+      <p>Face à un système fermé, le recours direct au corps électoral devrait être l'antidote naturel. En Belgique, il est constitutionnellement barré. L'article 33 dispose que tous les pouvoirs émanent de la Nation et qu'ils sont exercés de la manière établie par la Constitution. Sur cette base, la section de législation du Conseil d'État a rendu des avis convergents en <strong>1985, 1989, 2002 et 2004</strong> : le référendum décisionnel, d'initiative citoyenne ou gouvernementale, est inconstitutionnel à tous les niveaux de pouvoir. L'argument repose sur une distinction subtile entre souveraineté nationale — la Nation comme entité abstraite représentée par les corps constitués — et souveraineté populaire.</p>
+
+      <p>L'histoire pèse aussi. La seule consultation nationale de l'histoire contemporaine, celle de 1950 sur la Question royale, a produit un résultat géographiquement asymétrique qui a mené le pays au bord de la rupture. Depuis, l'idée même de consulter l'ensemble du corps électoral fonctionne comme un repoussoir mémoriel. Ne subsiste que la <strong>consultation populaire</strong>, non décisionnelle, introduite au niveau communal à la fin des années 1990, régional en 2014, et à Bruxelles en 2024. La pétition n° 988 déposée à la Chambre pour introduire l'initiative populaire n'a pas connu de suite.</p>
+
+      <h3>Les mini-publics : beaucoup d'attention, peu d'effet</h3>
+
+      <p>La Belgique est abondamment citée comme laboratoire de la démocratie délibérative, et ce n'est pas usurpé sur le plan du dispositif. Le <strong>G1000</strong>, lancé en 2011 par David Van Reybrouck et Paul Hermant pendant la crise des 541 jours, a réuni un millier de citoyens tirés au sort. Dix ans plus tard, son initiateur constatait que rien n'en avait été fait — en ajoutant que ce n'était pas la faute des citoyens. La Région bruxelloise a institué des commissions délibératives dès 2019, le Parlement wallon a tenu sa première commission mixte de novembre 2023 à mars 2024, et la Chambre comme le Sénat ont adopté des cadres pour des panels citoyens.</p>
+
+      <p>Le modèle le plus abouti reste celui d'<strong>Ostbelgien</strong>. La Communauté germanophone, quelque 78 000 habitants, a adopté à l'unanimité le 25 février 2019 le premier dialogue citoyen permanent au monde : un conseil citoyen tiré au sort fixe l'ordre du jour, des assemblées ad hoc formulent des recommandations, et le politique doit y répondre publiquement et de manière motivée dans l'année. À cette échelle, chaque habitant a un peu plus d'une chance sur deux d'être tiré au sort une fois dans sa vie.</p>
+
+      <p>Reste que ces dispositifs demeurent consultatifs, et que les élus y tiennent. Une enquête sociologique menée auprès de députés francophones montre que la majorité d'entre eux conçoit la démocratie délibérative comme une boîte à idées devant rester dépourvue de force contraignante, et que seuls les élus de petits partis écartés de l'exécutif se disent ouverts à une codécision. La littérature appelle cela le <strong>corporatisme électif</strong>. Tant que le taux de recommandations citoyennes effectivement suivies d'effet législatif reste proche de zéro, ces mécanismes fonctionnent comme des soupapes plutôt que comme des leviers.</p>
+    </div>
+  </section>
+
+  <!-- ══════════ VI ══════════ -->
+  <section class="partie rangee" id="consequences" aria-labelledby="t-cons">
+    <aside class="marge"><b>§ VI</b>IWEPS, 2023<br>G1000/Indiville, 2024<br>Scrutin du 9.06.2024</aside>
+    <div class="corps">
+      <h2 class="titre" id="t-cons">Ce que cela fait au pouvoir d'agir</h2>
+
+      <p>Les effets se mesurent. Selon le <strong>Baromètre social de la Wallonie 2023</strong> de l'IWEPS — 1 867 personnes interrogées entre mars et juin 2023, marge d'erreur de 2,27 % —, la confiance des Wallons dans l'État belge est passée de <strong>71 % en 2018 à 39 % en 2023</strong>. Pour les institutions politiques wallonnes, de 69 % à 35 %. Tout en bas de l'échelle : les hommes politiques à 19 %, les partis à 22 %. L'institut parle d'une chute inédite.</p>
+
+      <p>Un détail change tout à l'interprétation : dans la même enquête, les institutions de l'État social — sécurité sociale, santé, enseignement — et les institutions régaliennes — justice, police — conservent entre 65 % et 80 % de confiance. La défiance ne vise donc pas l'État en tant que tel, mais spécifiquement les acteurs partisans. Au niveau national, une enquête G1000/Indiville d'octobre 2024 confirme : 69 % des Belges déclarent peu ou pas de confiance dans les partis et les responsables politiques — 79 % en Wallonie, 70 % à Bruxelles, 65 % en Flandre — et seuls 24 % estiment que les citoyens ont suffisamment leur mot à dire. Mais <strong>88 % jugent que les responsables politiques doivent tenir compte de l'opinion des citoyens</strong>. Ce n'est pas une demande de moins de démocratie.</p>
+
+      <h3>L'abstention comme deuxième parti du pays</h3>
+
+      <p>Le vote est obligatoire, et pourtant : lors du triple scrutin du 9 juin 2024, plus de <strong>1 050 000 électeurs</strong> — 12,5 % du corps électoral, environ 100 000 de plus qu'en 2019 — ne se sont pas présentés. Rapportés aux résultats des formations politiques, ces abstentionnistes représentent virtuellement le deuxième parti du pays. Les poursuites sont rarissimes, l'amende théorique de 40 à 200 euros. Les votes blancs et nuls, autour de 3 % dans les années 1970, avaient doublé en 2018 ; un parti « Blanco », prônant l'attribution de sièges non pourvus, a recueilli environ 75 000 voix en 2024. La politologue Audrey Vandeleene estime que sans obligation, cinq à six personnes sur dix voteraient encore, contre neuf sur dix aujourd'hui — ce qui donne la mesure de l'écart entre participation contrainte et adhésion.</p>
+
+      <p>Le troisième effet est le plus prévisible : la prime aux formations de rupture. Le phénomène n'est pas neuf — le « Dimanche noir » de novembre 1991 en fut le premier symptôme violent —, mais la dynamique se nourrit désormais d'un sentiment d'impuissance documenté, particulièrement chez les jeunes et dans les zones périphériques, et d'un abandon des formes classiques d'engagement.</p>
+    </div>
+  </section>
+
+  <!-- ══════════ VII ══════════ -->
+  <section class="partie rangee" id="leviers" aria-labelledby="t-leviers">
+    <aside class="marge"><b>§ VII</b>Ce qui reste<br>actionnable</aside>
+    <div class="corps">
+      <h2 class="titre" id="t-leviers">Quatre leviers qui restent ouverts</h2>
+
+      <p>Le constat n'oblige pas au fatalisme. Quatre voies restent praticables, avec des horizons et des taux de rendement différents.</p>
+
+      <h3>1. Documenter, par la transparence existante</h3>
+      <p>L'article 32 de la Constitution et les législations sur la publicité de l'administration restent utilisables, tout comme des outils publics comme Cumuleo, qui recense plus de 1,46 million de mandats exercés par plus de 37 400 mandataires depuis 2004. <em>Seuil de bascule :</em> si les délais légaux de réponse sont dépassés, saisir la CADA — et, en Région bruxelloise, activer la procédure d'urgence.</p>
+
+      <h3>2. Plaider, mais en préparant l'exécution</h3>
+      <p>Klimaatzaak, Fedasil et la surpopulation carcérale montrent que la voie judiciaire obtient des condamnations. Elle n'obtient pas l'exécution. <em>Règle pratique :</em> prévoir dès la citation la demande d'astreinte, les mesures d'exécution et les commandements réitérés — les astreintes se prescrivent par six mois — ainsi que la publicité, seul levier réel sur un débiteur public quasi insaisissable.</p>
+
+      <h3>3. Investir les dispositifs participatifs, en mesurant leur rendement</h3>
+      <p>Commissions mixtes fédérales et régionales, commissions délibératives bruxelloises, modèle d'Ostbelgien. <em>Indicateur à suivre :</em> le taux de recommandations citoyennes effectivement suivies d'effet législatif. Aujourd'hui proche de zéro au fédéral. Tant qu'il le reste, ces dispositifs ne sont pas un levier mais une soupape.</p>
+
+      <h3>4. Porter les réformes de fond</h3>
+      <ul class="liste">
+        <li>Un contrôle du financement des partis réellement indépendant des partis, avec registre public des dons et cadeaux, comme le recommande le GRECO depuis des années.</li>
+        <li>La dépolitisation des nominations à la Cour constitutionnelle — la Belgique est le seul État membre du Conseil de l'Europe où l'ensemble des juges constitutionnels ne doit pas justifier d'une compétence juridique de haut niveau, la moitié des douze sièges étant réservée à d'anciens parlementaires.</li>
+        <li>La généralisation du décumul : le décret wallon de 2010, effectif en 2014, n'a réglé qu'une seule incompatibilité, alors que les enquêtes recensaient en moyenne six mandats par élu.</li>
+        <li>Un registre de transparence des représentants d'intérêts, et un débat constitutionnel assumé sur une consultation populaire décisionnelle.</li>
+      </ul>
+
+      <p><em>Seuil de réévaluation :</em> une remontée durable de la confiance politique au-dessus de 50 % dans les baromètres régionaux et nationaux indiquerait que les réformes produisent un effet. Une stagnation sous 40 % justifierait de concentrer l'énergie sur les voies contentieuses et participatives externes.</p>
+    </div>
+  </section>
+
+  <!-- ══════════ Réserves ══════════ -->
+  <section class="partie rangee" id="reserves" aria-labelledby="t-reserves">
+    <aside class="marge"><b>Note</b>Limites du dossier</aside>
+    <div class="corps">
+      <h2 class="titre" id="t-reserves">Réserves méthodologiques</h2>
+      <ul class="liste">
+        <li><strong>La particratie est un concept discuté.</strong> Pour Dewachter ou Delwit, elle décrit une dérive oligarchique ; pour Van Haute, une variante de la démocratie des partis. La Belgique demeure une démocratie constitutionnelle, régulièrement classée parmi les démocraties « complètes ».</li>
+        <li><strong>Le chiffre de ~300 millions d'euros d'astreintes carcérales est une estimation journalistique</strong> agrégeant plusieurs procédures en cours. Ses composantes — 117 M€ pour Lantin, environ 45 M€ pour Haren, un plafond de 50 M€ évoqué pour Mons — sont plus solidement traçables que le total.</li>
+        <li><strong>Les montants d'astreintes en matière d'accueil varient selon les sources et les dates</strong> (6,75 M€ fin 2024, ~10,7 M€ en septembre 2025, ~4 M€ en avril 2026 après extinction de certaines créances). Ils ne se cumulent pas ; ils photographient un stock à un instant donné.</li>
+        <li><strong>Pour Klimaatzaak, aucune astreinte n'est en vigueur</strong> et l'obligation des 55 % porte sur 2030 : la conformité ne peut pas encore être jugée. Ne pas confondre cette astreinte potentielle avec celles, bien prononcées, des dossiers accueil et prisons.</li>
+        <li><strong>Les données de confiance de l'IWEPS sont wallonnes</strong> et ne s'extrapolent pas telles quelles à l'ensemble du pays, où la confiance était historiquement plus élevée en Flandre. L'enquête G1000/Indiville fournit l'ancrage national.</li>
+        <li><strong>Plusieurs sources sont militantes ou journalistiques.</strong> Elles ont été recoupées, autant que possible, avec des sources académiques (CRISP, Cairn, ABSP), institutionnelles (Conseil de l'Europe, GRECO, Sénat, Cour des comptes, IFDH) et juridictionnelles (arrêts de la CEDH et de la Cour d'appel de Bruxelles).</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ══════════ FAQ ══════════ -->
+  <section class="partie rangee" id="questions" aria-labelledby="t-faq">
+    <aside class="marge"><b>FAQ</b>Six questions</aside>
+    <div class="corps">
+      <h2 class="titre" id="t-faq">Questions fréquentes</h2>
+
+      <details>
+        <summary>Qu'est-ce que la particratie belge ?</summary>
+        <p>Un régime où les partis politiques, et surtout leurs présidents, constituent le centre de gravité réel de la décision publique : composition des listes, désignation des ministres, négociation des coalitions, nominations à la haute fonction publique, aux entreprises publiques et à une partie de la Cour constitutionnelle. Le concept est documenté depuis les travaux de Wilfried Dewachter en 1981 et fait l'objet d'un large consensus scientifique, même si son interprétation varie.</p>
+      </details>
+
+      <details>
+        <summary>Les députés belges sont-ils libres de voter comme ils l'entendent ?</summary>
+        <p>En droit, oui : l'article 42 de la Constitution interdit le mandat impératif. En pratique, la discipline de parti s'impose par des contraintes indirectes — place sur les listes, carrière, financement, exclusion possible. Le siège reste toutefois acquis au parlementaire pour toute la législature, comme l'a montré le cas d'Emir Kir, exclu du PS en janvier 2020 mais resté député.</p>
+      </details>
+
+      <details>
+        <summary>L'État belge exécute-t-il les décisions de justice rendues contre lui ?</summary>
+        <p>Pas systématiquement. Plus de 16 000 décisions ordonnant l'hébergement de demandeurs de protection internationale sont restées inexécutées depuis janvier 2022, et la CEDH a prononcé plus de 2 300 mesures provisoires. Dans l'arrêt <cite>Camara et M.V. c. Belgique</cite> (2023), elle a constaté une violation de l'article 6 § 1 et parlé de carence systémique. Des astreintes restent largement impayées, en matière d'accueil comme de surpopulation carcérale.</p>
+      </details>
+
+      <details>
+        <summary>Le référendum est-il possible en Belgique ?</summary>
+        <p>Pas sous forme contraignante. Sur la base de l'article 33 de la Constitution, le Conseil d'État a estimé à plusieurs reprises — en 1985, 1989, 2002 et 2004 — que le référendum décisionnel était inconstitutionnel. Seule la consultation populaire, purement indicative, existe aux niveaux communal, provincial, régional wallon (2014) et bruxellois (2024). Une seule consultation nationale a eu lieu, en 1950, sur la Question royale.</p>
+      </details>
+
+      <details>
+        <summary>Combien d'argent public reçoivent les partis politiques belges ?</summary>
+        <p>Environ 83,7 millions d'euros de dotations directes en 2024 et 86,5 millions en 2025. Les fonds publics représentent près de 77 à 80 % de leurs revenus. En ajoutant la prise en charge des collaborateurs parlementaires, estimée à 104,6 millions pour 2024, le coût total avoisine 188 millions d'euros par an. Seuls les partis disposant déjà d'au moins un élu y ont droit, ce qui protège les formations installées.</p>
+      </details>
+
+      <details>
+        <summary>Les assemblées citoyennes tirées au sort changent-elles quelque chose ?</summary>
+        <p>Leur portée reste consultative. Le G1000 de 2011 n'a débouché sur aucune suite législative et les 34 recommandations du panel « We Need To Talk » sur le financement des partis, présentées au Parlement en mai 2023, n'ont produit aucun consensus. Le modèle d'Ostbelgien, premier dialogue citoyen permanent au monde depuis 2019, oblige au moins le politique à répondre publiquement et de manière motivée dans l'année.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- ══════════ Glossaire ══════════ -->
+  <section class="partie rangee" id="glossaire" aria-labelledby="t-gloss">
+    <aside class="marge"><b>Lexique</b>Six termes</aside>
+    <div class="corps">
+      <h2 class="titre" id="t-gloss">Glossaire</h2>
+      <dl class="glossaire">
+        <dt>Particratie</dt>
+        <dd>Régime dans lequel les partis politiques et leurs présidents concentrent la décision publique réelle.</dd>
+        <dt>Cabinetocratie</dt>
+        <dd>Hypertrophie des cabinets ministériels, administration parallèle nommée sur base partisane, qui court-circuite l'administration statutaire.</dd>
+        <dt>Astreinte</dt>
+        <dd>Somme par jour de retard qu'un juge impose à une partie condamnée pour la contraindre à exécuter sa décision.</dd>
+        <dt>Mandat impératif</dt>
+        <dd>Obligation faite à un élu de suivre les instructions de son parti ou de ses mandants. Interdit en droit belge par l'article 42 de la Constitution.</dd>
+        <dt>Mini-public</dt>
+        <dd>Assemblée de citoyens tirés au sort réunie pour délibérer et formuler des recommandations sur une question publique.</dd>
+        <dt>Consultation populaire</dt>
+        <dd>Vote citoyen dont le résultat n'a qu'une valeur d'avis, sans effet juridique contraignant.</dd>
+      </dl>
+    </div>
+  </section>
+
+  <!-- ══════════ Sources ══════════ -->
+  <section class="partie rangee sources" id="sources" aria-labelledby="t-sources">
+    <aside class="marge"><b>Sources</b>Consultées en<br>juillet 2026</aside>
+    <div class="corps">
+      <h2 class="titre" id="t-sources">Sources et références</h2>
+      <ol>
+        <li>ABSP — <a href="https://absp.be/article/belgique-enigme-science-politique/" rel="noopener">La Belgique, une énigme pour la science politique ?</a></li>
+        <li>CRISP — <a href="https://www.crisp.be/fr/catalogue/2004-aux-sources-de-la-particratie.html" rel="noopener">Aux sources de la particratie</a></li>
+        <li>CRISP, Vocabulaire politique — <a href="https://www.vocabulairepolitique.be/referendum/" rel="noopener">Référendum</a></li>
+        <li>ULB, Centre de droit public — <a href="https://droit-public.ulb.ac.be/wp-content/uploads/2020/04/CCCDP-13-Gouvernement-minoritaire-et-particratie.pdf" rel="noopener">Gouvernement minoritaire et particratie</a> (PDF)</li>
+        <li>Revue Politique — <a href="https://www.revuepolitique.be/revue/particratie-a-la-belge-des-outils-democratiques-en-bout-de-course/" rel="noopener">Particratie à la belge : des outils démocratiques en bout de course</a></li>
+        <li>Revue Politique — <a href="https://www.revuepolitique.be/le-referendum-en-belgique-fantome-constitutionnel/" rel="noopener">Le référendum en Belgique, fantôme constitutionnel</a></li>
+        <li>Trends-Tendances — <a href="https://trends.levif.be/opinions/cartes-blanches/la-particratie-belge-est-elle-une-menace-pour-la-democratie/" rel="noopener">La particratie belge est-elle une menace pour la démocratie ?</a></li>
+        <li>Chambre des représentants — <a href="https://www.lachambre.be/kvvcr/pdf_sections/depute/dotation.pdf" rel="noopener">Financement des partis politiques : règles de base</a> (PDF)</li>
+        <li>KU Leuven / Lirias — <a href="https://lirias.kuleuven.be/retrieve/0f975fdf-e23c-46aa-b712-c15f51557305" rel="noopener">L'argent des partis politiques</a></li>
+        <li>Érudit — <a href="https://www.erudit.org/fr/revues/rgd/2006-v36-n4-rgd01573/1027161ar.pdf" rel="noopener">Le financement public des partis politiques en Belgique</a> (PDF)</li>
+        <li>We Need To Talk — <a href="https://www.weneedtotalk.be/fr/financement-des-partis" rel="noopener">Le financement des partis</a></li>
+        <li>Cumuleo — <a href="https://www.cumuleo.be/foi/" rel="noopener">Publicité de l'administration et transparence administrative</a></li>
+        <li>CADA — <a href="https://cada.cfwb.be/" rel="noopener">Commission d'accès aux documents administratifs</a></li>
+        <li>UVCW — <a href="https://www.uvcw.be/fonctionnement/focus/art-8063" rel="noopener">La transparence administrative</a></li>
+        <li>OpenEdition / Pyramides — <a href="https://journals.openedition.org/pyramides/396?lang=en" rel="noopener">Démocratie ou particratie ? 120 propositions pour réformer le système belge</a></li>
+        <li>Institut fédéral des droits humains — <a href="https://institutfederaldroitshumains.be/sites/default/files/2025-10/IFDH-Rapport-etat-de-droit-2025.pdf" rel="noopener">Rapport état de droit 2025</a> (PDF)</li>
+        <li>Institut fédéral des droits humains — <a href="https://institutfederaldroitshumains.be/sites/default/files/2024-08/Rapport%20Etat%20de%20droit%202024%20FR.pdf" rel="noopener">Rapport état de droit 2024</a> (PDF)</li>
+        <li>Commission européenne — <a href="https://commission.europa.eu/document/download/24a9b587-6e2a-4078-b58d-65dabd1233b4_fr?filename=5_2_coun_chap_belgium_fr.pdf" rel="noopener">Rapport 2026 sur l'état de droit, chapitre Belgique</a> (PDF)</li>
+        <li>UCLouvain / CeDIE — <a href="https://www.uclouvain.be/fr/instituts-recherche/juri/cedie/news/paluku-aout-2023" rel="noopener">Cour eur. D.H., 18 juillet 2023, Camara c. Belgique</a></li>
+        <li>Conseil de l'Europe, HUDOC-EXEC — <a href="https://hudoc.exec.coe.int/?i=004-64376" rel="noopener">Exécution de l'arrêt Camara c. Belgique</a></li>
+        <li>Myria — <a href="https://www.myria.be/files/DH-DD(2024)833revF.pdf" rel="noopener">Communication au Comité des Ministres sur l'exécution de l'arrêt Camara</a> (PDF)</li>
+        <li>Equality Law Clinic (ULB) — <a href="https://equalitylawclinic.ulb.be/de-camara-et-m-v-c-belgique-a-la-declaration-de-chisinau-la-non-execution-systematique-des-decisions-judiciaires-en-matiere-daccueil-quelles-perspectives-pour-les-droits-des-personnes/" rel="noopener">La non-exécution systématique des décisions judiciaires en matière d'accueil</a></li>
+        <li>ADDE — <a href="https://www.adde.be/images/2024/4._Cadre_juridique_de_laccueil_en_BE_-_H%C3%A9l%C3%A8ne_Crockart.pdf" rel="noopener">Cadre juridique de l'accueil en Belgique</a> (PDF)</li>
+        <li>BX1 — <a href="https://bx1.be/categories/news/crise-de-laccueil-en-belgique-aneleen-van-bossuyt-defie-la-justice-frederic-van-leeuw-alerte-sur-letat-de-droit/" rel="noopener">Crise de l'accueil : Van Bossuyt défie la justice, Van Leeuw alerte sur l'État de droit</a></li>
+        <li>Cour de cassation — <a href="https://www.cass.be/pdf/M%C3%A9morandum_commun_2024FR.pdf" rel="noopener">Mémorandum commun des hautes juridictions, 2024</a> (PDF)</li>
+        <li>Conseil d'État — <a href="https://www.raadvst-consetat.be/?page=news&amp;lang=fr&amp;newsitem=844" rel="noopener">Actualités</a></li>
+        <li>Unia — <a href="https://www.unia.be/fr/actua/appel-au-respect-de-lind%C3%A9pendance-de-la-cour-europ%C3%A9enne-des-droits-de-lhomme" rel="noopener">Appel au respect de l'indépendance de la CEDH</a></li>
+        <li>Avocats.be, La Tribune — <a href="http://latribune.avocats.be/fr/dans-les-coulisses-du-parlement-belge-novembre-2025" rel="noopener">Dans les coulisses du Parlement belge</a></li>
+        <li>Chambre des représentants — <a href="https://dekamer.mijnopinie.belgium.be/initiatives/i-988?locale=fr" rel="noopener">Pétition n° 988 : initiative populaire et référendum</a></li>
+        <li>Participation.brussels — <a href="https://participation.brussels/outils/dispositifs-participatifs/le-referendum-la-votation-et-la-consultation-populaire/base-theorique-le-referendum-la-votation-et-la-consultation-populaire" rel="noopener">Référendum, votation et consultation populaire</a></li>
+        <li>Érudit / Politique et Sociétés — <a href="https://www.erudit.org/fr/revues/ps/2022-v41-n2-ps06818/1086926ar/" rel="noopener">Comment les députées et députés perçoivent la démocratie participative et les mini-publics</a></li>
+        <li>Cap Démocratie — <a href="https://www.capdemocratie.be/wp-content/uploads/2023/02/Comment-les-depute%E2%88%99es-percoivent-la-democratie-participative.pdf" rel="noopener">Version PDF de la même enquête</a></li>
+        <li>Etopia — <a href="https://etopia.be/wp-content/uploads/2025/11/2024-Courts-circuits_Changer-de-regime-politique.pdf" rel="noopener">Courts-circuits : changer de régime politique</a> (PDF)</li>
+        <li>Les Plats Pays — <a href="https://www.les-plats-pays.com/article/quel-impact-aura-la-fin-du-vote-obligatoire-en-flandre/" rel="noopener">Quel impact aura la fin du vote obligatoire en Flandre ?</a></li>
+      </ol>
+    </div>
+  </section>
+
+</article>
+</main>
+
+<footer class="pied">
+  <div class="enveloppe">
+    <p>Carte blanche publiée le <time datetime="2026-07-26">26 juillet 2026</time>. Les chiffres sont datés dans le texte et dans les <a href="#reserves">réserves méthodologiques</a> ; ils évoluent, en particulier les montants d'astreintes.</p>
+    <p>Ce texte est une opinion argumentée à partir de sources publiques. Il ne constitue pas un avis juridique. Corrections et compléments bienvenus via le dépôt du site.</p>
+    <p><a href="#contenu">Retour en haut de page</a></p>
+  </div>
+</footer>
+
+<script>
+// Sommaire : indication de la section en cours de lecture.
+(function(){
+  var liens = Array.prototype.slice.call(document.querySelectorAll('.sommaire a[href^="#"]'));
+  if(!liens.length || !('IntersectionObserver' in window)) return;
+  var carte = {};
+  liens.forEach(function(a){
+    var cible = document.getElementById(a.getAttribute('href').slice(1));
+    if(cible) carte[cible.id] = a;
+  });
+  var obs = new IntersectionObserver(function(entrees){
+    entrees.forEach(function(e){
+      if(e.isIntersecting){
+        liens.forEach(function(a){ a.removeAttribute('aria-current'); });
+        if(carte[e.target.id]) carte[e.target.id].setAttribute('aria-current','true');
+      }
+    });
+  },{rootMargin:'-15% 0px -70% 0px'});
+  Object.keys(carte).forEach(function(id){ obs.observe(document.getElementById(id)); });
+})();
+</script>
+</body>
+</html>
